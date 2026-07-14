@@ -101,6 +101,15 @@ ul { list-style: none; }
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
+.btn-red {
+  background: #e00000;
+  border-color: #e00000;
+}
+.btn-red:hover {
+  background: #c00000;
+  border-color: #c00000;
+  box-shadow: 0 8px 24px rgba(220,0,0,0.35);
+}
 .btn-nav {
   background: var(--color-primary);
   color: var(--color-white);
