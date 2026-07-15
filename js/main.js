@@ -7,6 +7,28 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
+// ===== SERVICES DROPDOWN =====
+const navDropdownBtn  = document.getElementById('navDropdownBtn');
+const navDropdownMenu = document.getElementById('navDropdownMenu');
+const navChevron      = document.getElementById('navChevron');
+
+navDropdownBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = navDropdownMenu.classList.toggle('open');
+  navDropdownBtn.setAttribute('aria-expanded', String(open));
+  navDropdownMenu.setAttribute('aria-hidden', String(!open));
+  navChevron.style.transform = open ? 'rotate(180deg)' : '';
+});
+
+document.addEventListener('click', () => {
+  navDropdownMenu.classList.remove('open');
+  navDropdownBtn.setAttribute('aria-expanded', 'false');
+  navDropdownMenu.setAttribute('aria-hidden', 'true');
+  navChevron.style.transform = '';
+});
+
+navDropdownMenu.addEventListener('click', (e) => e.stopPropagation());
+
 // ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
 const mobileNav  = document.getElementById('mobileNav');

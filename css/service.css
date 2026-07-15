@@ -1,0 +1,662 @@
+/* ============================================================
+   SERVICE PAGE — 專屬樣式
+   作用域前綴: .service-hero / .service-problems / .service-benefits /
+               .service-plans / .service-audience / .service-booking /
+               .service-faq / .service-cta
+   ============================================================ */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.service-hero {
+  background: var(--c-bg);
+  padding-top: var(--header-h);
+  overflow: hidden;
+}
+.service-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 60px var(--pad-x) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  min-height: 460px;
+}
+.service-hero-text { display: flex; flex-direction: column; gap: 20px; }
+.service-hero-text .sec-kado { margin-bottom: 0; }
+.service-hero-text h1 {
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c-primary);
+  margin: 0;
+}
+.service-hero-text p {
+  font-size: var(--fs-16);
+  color: #555;
+  line-height: var(--lh-loose);
+  max-width: 480px;
+}
+.service-hero-text .service-hero-tagline {
+  font-size: var(--fs-16);
+  font-weight: 700;
+  color: var(--c-text);
+}
+.service-hero-img {
+  position: relative;
+}
+.service-hero-img > img:first-child {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 32px 32px 120px 32px;
+  display: block;
+}
+.service-hero-deco {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 80px;
+  height: auto;
+  opacity: .9;
+}
+.service-hero-wave {
+  width: 100%;
+  line-height: 0;
+  margin-top: 40px;
+}
+.service-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* ============================================================
+   PAIN POINTS ("你是否有以下困擾？")
+   ============================================================ */
+.service-problems {
+  background: var(--c-white);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-problems-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-problem-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+  margin-bottom: 72px;
+}
+.service-problem-row:last-child { margin-bottom: 0; }
+/* Swap columns: put image first (order:-1) on reversed rows */
+.service-problem-row--reverse .service-problem-img { order: -1; }
+
+.service-problem-img {
+  overflow: hidden;
+  border-radius: 24px;
+  height: 320px;
+  flex-shrink: 0;
+}
+.service-problem-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.service-problem-text {}
+.service-problem-text h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-28);
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1.3;
+  margin-bottom: var(--s-16);
+}
+.service-problem-text p {
+  font-size: var(--fs-15);
+  color: #555;
+  line-height: var(--lh-loose);
+}
+
+/* ============================================================
+   BENEFITS ("輕鬆享受包車旅行")
+   ============================================================ */
+.service-benefits {
+  background: var(--c-bg);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-benefits-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 28px;
+  margin-top: var(--s-48);
+}
+.service-benefit-card {
+  background: var(--c-white);
+  border-radius: var(--r-24);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.service-benefit-card--large {
+  grid-row: span 2;
+}
+.service-benefit-body {
+  padding: 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.service-benefit-num {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(255,149,94,0.22);
+  line-height: 1;
+}
+.service-benefit-card--large .service-benefit-num {
+  font-size: 80px;
+}
+.service-benefit-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-20);
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: var(--lh-snug);
+}
+.service-benefit-body p {
+  font-size: var(--fs-14);
+  color: #666;
+  line-height: var(--lh-loose);
+}
+
+/* ============================================================
+   PLANS ("包車類型介紹")
+   ============================================================ */
+.service-plans {
+  background: var(--c-white);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-plans-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-plans-subtitle {
+  font-size: var(--fs-18);
+  color: #666;
+  margin-top: var(--s-8);
+  margin-bottom: var(--s-48);
+}
+.service-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.service-plan-card {
+  border-radius: var(--r-24);
+  overflow: hidden;
+  background: var(--c-white);
+  box-shadow: var(--sh-sm);
+  border: 1.5px solid var(--c-border);
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+.service-plan-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+.service-plan-img {
+  height: 260px;
+  overflow: hidden;
+}
+.service-plan-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-slow) var(--ease);
+}
+.service-plan-card:hover .service-plan-img img { transform: scale(1.04); }
+.service-plan-body {
+  padding: 28px 28px 32px;
+}
+.service-plan-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-22);
+  font-weight: 700;
+  color: var(--c-primary);
+  margin-bottom: var(--s-12);
+}
+.service-plan-body p {
+  font-size: var(--fs-15);
+  color: #555;
+  line-height: var(--lh-loose);
+}
+
+/* ============================================================
+   AUDIENCE ("我適合包車旅遊嗎？")
+   ============================================================ */
+.service-audience {
+  background: var(--c-bg);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-audience-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: var(--s-48);
+}
+.service-audience-card {
+  background: var(--c-white);
+  border-radius: var(--r-24);
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color var(--t-base) var(--ease), transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+.service-audience-card--featured {
+  border-color: var(--c-primary);
+  transform: scale(1.02);
+}
+.service-audience-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 28px auto 0;
+}
+.service-audience-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.service-audience-body {
+  padding: 20px 24px 28px;
+  text-align: center;
+}
+.service-audience-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: var(--s-8);
+}
+.service-audience-card--featured .service-audience-body h3 { color: var(--c-primary); }
+.service-audience-body p {
+  font-size: var(--fs-14);
+  color: #666;
+  line-height: var(--lh-loose);
+}
+
+/* ============================================================
+   BOOKING FLOW ("包車預約流程")
+   ============================================================ */
+.service-booking {
+  background: var(--c-white);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-booking-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-booking-steps {
+  margin-top: var(--s-56);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.service-booking-step {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--c-border);
+  position: relative;
+}
+.service-booking-step:last-child { border-bottom: none; }
+.service-booking-step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: var(--c-white);
+  font-family: var(--font-display);
+  font-size: var(--fs-20);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(255,149,94,0.30);
+}
+.service-booking-step-body { flex: 1; }
+.service-booking-step-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: var(--s-8);
+  line-height: var(--lh-snug);
+}
+.service-booking-step-body p {
+  font-size: var(--fs-14);
+  color: #666;
+  line-height: var(--lh-loose);
+  margin-bottom: var(--s-16);
+}
+.service-booking-step-body p:last-child { margin-bottom: 0; }
+.service-booking-step-btns {
+  display: flex;
+  gap: var(--s-12);
+  flex-wrap: wrap;
+  margin-top: var(--s-16);
+}
+.service-booking-step-img {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--r-12);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.service-booking-step-img img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  font-size: 12px;
+}
+
+/* ============================================================
+   FAQ ("常見問題")
+   ============================================================ */
+.service-faq {
+  background: var(--c-bg);
+  padding: var(--s-80) 0 var(--s-96);
+}
+.service-faq-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.service-faq-list {
+  margin-top: var(--s-48);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.service-faq-item {
+  border-bottom: 1px solid var(--c-border);
+}
+.service-faq-item:first-child { border-top: 1px solid var(--c-border); }
+.service-faq-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  font-weight: 600;
+  color: var(--c-text);
+  transition: color var(--t-fast) var(--ease);
+}
+.service-faq-btn:hover { color: var(--c-primary); }
+.service-faq-btn[aria-expanded="true"] { color: var(--c-primary); }
+.service-faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: var(--c-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform var(--t-base) var(--ease);
+}
+.service-faq-btn[aria-expanded="true"] .service-faq-icon { transform: rotate(45deg); }
+.service-faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--t-slow) var(--ease), padding var(--t-base) var(--ease);
+  padding-bottom: 0;
+}
+.service-faq-body.open {
+  max-height: 600px;
+  padding-bottom: 24px;
+}
+.service-faq-body p, .service-faq-body ul {
+  font-size: var(--fs-15);
+  color: #555;
+  line-height: var(--lh-loose);
+  margin-bottom: var(--s-12);
+}
+.service-faq-body p:last-child, .service-faq-body ul:last-child { margin-bottom: 0; }
+.service-faq-body ul { padding-left: var(--s-16); }
+.service-faq-body li { margin-bottom: var(--s-8); }
+
+/* ============================================================
+   SERVICE CTA (differs from homepage CTA)
+   ============================================================ */
+.service-cta {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: url('https://framerusercontent.com/images/hiSWS81SKoTkKRkZn64OY2PKAs.png') center center / cover no-repeat;
+}
+.service-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(254,245,234,0.30);
+  z-index: 1;
+  pointer-events: none;
+}
+.service-cta-wave-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 2;
+  line-height: 0;
+  pointer-events: none;
+}
+.service-cta-wave-top svg { display: block; width: 100%; height: 80px; }
+.service-cta-inner {
+  position: relative;
+  z-index: 3;
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px var(--pad-x) 80px;
+  display: grid;
+  grid-template-columns: 54% 46%;
+  gap: 0;
+  align-items: center;
+}
+.service-cta-heading h2 {
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--c-primary);
+  letter-spacing: 0;
+}
+.service-cta-body {
+  padding-left: 60px;
+}
+.service-cta-body p {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #111;
+  max-width: 440px;
+  margin-bottom: var(--s-32);
+}
+
+/* ============================================================
+   SERVICE CTA BUTTON
+   右側尖角，hover 透明外框 + 左側填色箭頭
+   ============================================================ */
+.btn-service-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 2.5px;
+  background: var(--c-primary);
+  /* 右側尖角，左側平直 */
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-service-cta-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 48px 0 24px;
+  background: var(--c-primary);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  font-weight: 700;
+  line-height: 1.35;
+  clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 50%, calc(100% - 19px) 100%, 0 100%);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+  white-space: nowrap;
+  text-align: left;
+}
+/* CSS 三角形箭頭（hover 時顯示） */
+.btn-service-cta-arrow {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 13px solid var(--c-primary);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+/* Hover: inner 透明，露出外層橙色作為 2.5px 外框 */
+.btn-service-cta:hover .btn-service-cta-inner {
+  background: rgba(255,255,255,0.92);
+  color: var(--c-primary);
+}
+.btn-service-cta:hover .btn-service-cta-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   RESPONSIVE — Service Page
+   ============================================================ */
+@media (max-width: 1024px) {
+  .service-hero-text h1 { font-size: 44px; }
+  .service-benefits-grid { grid-template-columns: 1fr; }
+  .service-cta-heading h2 { font-size: 44px; }
+}
+
+@media (max-width: 768px) {
+  /* Hero: 保持兩欄，壓縮比例 */
+  .service-hero-inner {
+    grid-template-columns: 55% 45%;
+    padding: 32px var(--pad-x) 0;
+    gap: 16px;
+    min-height: auto;
+  }
+  .service-hero-text h1 { font-size: 26px; }
+  .service-hero-text p { font-size: var(--fs-13); }
+  .service-hero-img > img:first-child { height: 200px; border-radius: 16px 16px 60px 16px; }
+
+  /* Pain points: 保持兩欄，文字寬圖片窄 */
+  .service-problem-row {
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+  /* 反轉列: 圖片在左(窄)，文字在右(寬) */
+  .service-problem-row--reverse {
+    grid-template-columns: 2fr 3fr;
+  }
+  .service-problem-img { height: 260px; border-radius: 16px; }
+  .service-problem-text h3 { font-size: var(--fs-20); }
+
+  /* Plans: 單欄堆疊，圖片更大 */
+  .service-plans-grid { grid-template-columns: 1fr; }
+  .service-plan-img { height: 250px; }
+  .service-plan-card:hover { transform: none; }
+
+  /* Audience: 單欄堆疊 */
+  .service-audience-grid { grid-template-columns: 1fr; }
+  .service-audience-card--featured { transform: none; }
+  .service-audience-card:last-child { grid-column: auto; max-width: none; margin: 0; }
+
+  .service-booking-step {
+    grid-template-columns: 48px 1fr 96px;
+    gap: 16px;
+  }
+  .service-booking-step-img {
+    width: 96px;
+    height: 96px;
+  }
+  .service-booking-step-img img {
+    width: 96px;
+    height: 96px;
+  }
+  .service-booking-step-num { width: 48px; height: 48px; font-size: var(--fs-18); }
+
+  /* 各 section 行動版間距加大 */
+  .service-problems,
+  .service-benefits,
+  .service-plans,
+  .service-audience,
+  .service-booking,
+  .service-faq { padding-top: 72px; padding-bottom: 80px; }
+
+  .service-cta-inner {
+    grid-template-columns: 1fr;
+    padding: 80px var(--pad-x) 60px;
+  }
+  .service-cta-heading h2 { font-size: 38px; }
+  .service-cta-body { padding-left: 0; margin-top: 24px; }
+  .service-cta-body p { font-size: var(--fs-16); max-width: 100%; }
+}
+
+@media (max-width: 430px) {
+  .service-hero-text h1 { font-size: 22px; }
+  .service-hero-img > img:first-child { height: 180px; }
+  .service-problem-row { margin-bottom: 72px; }
+  .service-problem-img { height: 280px; }
+  .service-plan-img { height: 270px; }
+  .service-faq-btn { font-size: var(--fs-15); }
+  .service-cta-heading h2 { font-size: 30px; }
+}

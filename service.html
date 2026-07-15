@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本旅遊包車服務 — Kado Tokyo</title>
+  <meta name="description" content="Kado Tokyo 日本旅遊包車服務。高自由度、超舒適又安全，量身打造專屬行程，讓妳把每一分旅程都用在最想看的風景上。">
+  <link rel="icon" href="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/service.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <!-- 回首頁 | 服務項目 ∨ -->
+      <div class="nav-left-group">
+        <a href="index.html" class="nav-back">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1L1 7.5H3V14.5H7V10H9V14.5H13V7.5H15L8 1Z" fill="currentColor"/>
+          </svg>
+          回首頁
+        </a>
+        <span class="nav-sep">|</span>
+        <div class="nav-dropdown" id="navDropdown">
+          <button class="nav-left" id="navDropdownBtn" aria-expanded="false" aria-haspopup="true">
+            服務項目 <span class="nav-chevron" id="navChevron">∨</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu" aria-hidden="true">
+            <a href="service.html" class="nav-dropdown-item">日本旅遊包車</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Kado Tokyo">
+      </a>
+      <div class="nav-right">
+        <a href="https://lin.ee/1UVlyHC" class="btn-book" target="_blank" rel="noopener"><span>立即預約</span></a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="index.html">回首頁</a>
+      <a href="service.html">日本旅遊包車</a>
+      <a href="index.html#fleet">車隊介紹</a>
+      <a href="index.html#blog">最新文章</a>
+      <a href="https://lin.ee/1UVlyHC" class="mobile-btn-book" target="_blank" rel="noopener">立即預約</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="service-hero">
+    <div class="service-hero-inner">
+      <div class="service-hero-text">
+        <p class="sec-kado">KADO TOKYO</p>
+        <h1>日本旅遊包車</h1>
+        <p>不管是第一次探險日本，還是想深度挖掘城市小角落，Kado Tokyo 的包車服務都能為妳量身打造專屬行程！高自由度、超舒適又安全，讓妳把每一分旅程都用在最想看的風景上。</p>
+        <p class="service-hero-tagline">一起出發，解鎖妳的專屬日本冒險吧！</p>
+        <div style="margin-top:8px;">
+          <a href="https://lin.ee/1UVlyHC" class="btn-arrow-more btn-arrow-more--lg" target="_blank" rel="noopener"><span>立即預約包車</span></a>
+        </div>
+      </div>
+      <div class="service-hero-img">
+        <img src="https://framerusercontent.com/images/ccmZEEJOV0zmmCtrGp2otQO3A.png"
+             alt="日本旅遊包車 — 東京街道">
+        <img class="service-hero-deco"
+             src="https://framerusercontent.com/images/TKq6wako3pX4DqfFmCFAtxD0.png"
+             alt="">
+      </div>
+    </div>
+    <div class="service-hero-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,0 480,60 720,30 C960,0 1200,55 1440,20 L1440,60 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PAIN POINTS ===== -->
+  <section class="service-problems" id="problems">
+    <div class="service-problems-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">你是否有以下困擾？</h2>
+        </div>
+      </div>
+
+      <!-- 1: text-left, img-right -->
+      <div class="service-problem-row">
+        <div class="service-problem-text">
+          <h3>語言不通？<br>迷路真的很崩潰！</h3>
+          <p>日本交通超複雜，不會日文、又不熟路線，出門真的壓力山大！一不小心搭錯車、看不懂指示，整天行程都可能大亂～別擔心，有我們貼心帶路，旅程輕鬆又自在，玩得更安心！</p>
+        </div>
+        <div class="service-problem-img">
+          <img src="https://framerusercontent.com/images/CASnaJR7JjWnihpaVkNKvJS2SAo.png"
+               alt="語言不通">
+        </div>
+      </div>
+
+      <!-- 2: img-left, text-right -->
+      <div class="service-problem-row service-problem-row--reverse">
+        <div class="service-problem-text">
+          <h3>行李太多，<br>移動好崩潰！</h3>
+          <p>拖著行李轉車真的超麻煩，尤其還有小朋友或家人一起，更是考驗耐力～光是搬行李上下月台、找出口，就已經快累壞啦！放心，有我們包車在，輕鬆帶妳到每個想去的地方，行李再多也不怕！</p>
+        </div>
+        <div class="service-problem-img">
+          <img src="https://framerusercontent.com/images/sP78bVXMGc18YhCpka3jOYZMpE.png"
+               alt="行李太多移動不便">
+        </div>
+      </div>
+
+      <!-- 3: text-left, img-right -->
+      <div class="service-problem-row">
+        <div class="service-problem-text">
+          <h3>一天想跑好多景點，<br>行程超難排！</h3>
+          <p>交通轉來轉去，時間都花在趕車上，行程很容易亂成一團。有時地鐵坐錯、巴士沒搭上，Google 地圖也不靈光，本來想輕鬆玩，結果整天都在車上漂流～其實可以更輕鬆，把路程交給我們，玩景點不再瞎忙趕車！</p>
+        </div>
+        <div class="service-problem-img">
+          <img src="https://framerusercontent.com/images/UiyoY2ml5BgGJ33cfMa0ReUNbSw.png"
+               alt="行程難排">
+        </div>
+      </div>
+
+      <!-- 4: img-left, text-right -->
+      <div class="service-problem-row service-problem-row--reverse">
+        <div class="service-problem-text">
+          <h3>想去郊區，<br>沒車真的到不了！</h3>
+          <p>像富士山、輕井澤這些夢幻景點，交通真的不方便，班次少、轉車又花時間，一天能去的地方超有限。有了包車，想去哪就去哪，郊區美景輕鬆一網打盡！</p>
+        </div>
+        <div class="service-problem-img">
+          <img src="https://framerusercontent.com/images/6uRPKIbD9C8rDLioPPv98Jjo8.png"
+               alt="郊區交通不便">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section class="service-benefits" id="benefits">
+    <div class="service-benefits-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">輕鬆享受包車旅行</h2>
+        </div>
+      </div>
+
+      <div class="service-benefits-grid">
+        <!-- 01 large card -->
+        <div class="service-benefit-card service-benefit-card--large">
+          <div class="service-benefit-body">
+            <div class="service-benefit-num">01</div>
+            <h3>彈性行程　想怎麼玩都可以</h3>
+            <p>行程完全配合妳的需求設計，不怕大眾交通麻煩，想怎麼排就怎麼排！</p>
+          </div>
+        </div>
+        <!-- 02 -->
+        <div class="service-benefit-card">
+          <div class="service-benefit-body">
+            <div class="service-benefit-num">02</div>
+            <h3>服務範圍超廣</h3>
+            <p>東京、橫濱、箱根、河口湖、輕井澤…熱門郊區景點都能包！揪閨蜜、家人一起出發超方便。</p>
+          </div>
+        </div>
+        <!-- 03 -->
+        <div class="service-benefit-card">
+          <div class="service-benefit-body">
+            <div class="service-benefit-num">03</div>
+            <h3>中文司機 溝通無障礙</h3>
+            <p>每位司機都會中文，行程問路、臨時改動都不用擔心，讓旅途輕鬆又自在。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PLANS ===== -->
+  <section class="service-plans" id="plans">
+    <div class="service-plans-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">包車類型介紹</h2>
+        </div>
+      </div>
+      <p class="service-plans-subtitle">依您的需求選擇合適方案</p>
+
+      <div class="service-plans-grid">
+        <div class="service-plan-card">
+          <div class="service-plan-img">
+            <img src="https://framerusercontent.com/images/INYLmFpYgIPnPAUxeqT7dOkwoo.png"
+                 alt="市區 10 小時包車">
+          </div>
+          <div class="service-plan-body">
+            <h3>市區 10 小時包車</h3>
+            <p>東京一日遊就該這麼玩！彈性安排行程，輕鬆又有效率～</p>
+          </div>
+        </div>
+        <div class="service-plan-card">
+          <div class="service-plan-img">
+            <img src="https://framerusercontent.com/images/F1wBq6KM1fkaRrUbWcw70x1jP18.png"
+                 alt="多日行程包車">
+          </div>
+          <div class="service-plan-body">
+            <h3>多日行程包車</h3>
+            <p>中長期旅行最佳選擇，一趟行程多城市，不用每天換飯店、搬行李，旅遊超省心！</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== AUDIENCE ===== -->
+  <section class="service-audience" id="audience">
+    <div class="service-audience-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">我適合包車旅遊嗎？</h2>
+        </div>
+      </div>
+
+      <div class="service-audience-grid">
+        <div class="service-audience-card">
+          <div class="service-audience-img">
+            <img src="https://framerusercontent.com/images/tDBPOXNd1G8vq5D1bpDjrCDeL8.png"
+                 alt="親子家庭旅遊">
+          </div>
+          <div class="service-audience-body">
+            <h3>親子家庭旅遊</h3>
+            <p>全家輕鬆出遊，不用辛苦換車搬行李，爸媽小孩都能玩得安心又開心！</p>
+          </div>
+        </div>
+        <div class="service-audience-card service-audience-card--featured">
+          <div class="service-audience-img">
+            <img src="https://framerusercontent.com/images/Nq07kSYwajiKw9MzzumocEOhKc.png"
+                 alt="朋友家族出遊">
+          </div>
+          <div class="service-audience-body">
+            <h3>朋友家族出遊</h3>
+            <p>好姊妹、好友一起搭車，想去哪就去哪，行程更彈性、歡笑不間斷！</p>
+          </div>
+        </div>
+        <div class="service-audience-card">
+          <div class="service-audience-img">
+            <img src="https://framerusercontent.com/images/ImZtBjUCmXw33o6q2mC2OT2iWI.png"
+                 alt="長輩悠閒慢遊">
+          </div>
+          <div class="service-audience-body">
+            <h3>長輩悠閒慢遊</h3>
+            <p>減少換車奔波，長輩出國也能坐得舒服、玩得安心，讓全家都放心。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== BOOKING FLOW ===== -->
+  <section class="service-booking" id="booking">
+    <div class="service-booking-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">包車預約流程</h2>
+        </div>
+      </div>
+
+      <ol class="service-booking-steps" aria-label="包車預約流程">
+
+        <li class="service-booking-step">
+          <div class="service-booking-step-num" aria-hidden="true">1</div>
+          <div class="service-booking-step-body">
+            <h3>預約時間與車型</h3>
+            <p>點擊下方按鈕進入預約系統，選擇您要包車的日期和車種。為確保車輛調度順暢，您需要支付一筆訂金，以確保預訂。如有多日客製需求，請事先與我們聯繫。</p>
+            <div class="service-booking-step-btns">
+              <a href="https://lin.ee/1UVlyHC" class="btn-arrow-more" target="_blank" rel="noopener"><span>前往預約</span></a>
+              <a href="https://weekielife.com/blog/kado-howtobook" class="btn-outline-dark" target="_blank" rel="noopener">了解完整預約細節</a>
+            </div>
+          </div>
+          <div class="service-booking-step-img">
+            <img src="https://framerusercontent.com/images/pfkcVEvZ8yVhm8GspTz9OYIay94.png" alt="預約包車">
+          </div>
+        </li>
+
+        <li class="service-booking-step">
+          <div class="service-booking-step-num" aria-hidden="true">2</div>
+          <div class="service-booking-step-body">
+            <h3>填寫表單，補充完整預約需求</h3>
+            <p>預約完成後，請填寫預約表單，將您的包車行程需求詳細備註給我們。</p>
+          </div>
+          <div class="service-booking-step-img">
+            <img src="https://framerusercontent.com/images/eHk84laAbQKmWaWsZUWkckCshk.png" alt="填寫表單">
+          </div>
+        </li>
+
+        <li class="service-booking-step">
+          <div class="service-booking-step-num" aria-hidden="true">3</div>
+          <div class="service-booking-step-body">
+            <h3>等待預約確認訊息</h3>
+            <p>收到您的預約需求後，我們會盡快於 1 個工作天內的時間回覆您。</p>
+          </div>
+          <div class="service-booking-step-img">
+            <img src="https://framerusercontent.com/images/5ki9rsQzEX1x3WiZKxOD1pJqpQk.png" alt="等待確認">
+          </div>
+        </li>
+
+        <li class="service-booking-step">
+          <div class="service-booking-step-num" aria-hidden="true">4</div>
+          <div class="service-booking-step-body">
+            <h3>支付訂金、確認預約</h3>
+            <p>待預約細節和行程確認後，即可支付訂金，完成預約。</p>
+          </div>
+          <div class="service-booking-step-img">
+            <img src="https://framerusercontent.com/images/80Agpy8jnaqFSdRLK80QSVu0PSY.png" alt="支付訂金">
+          </div>
+        </li>
+
+        <li class="service-booking-step">
+          <div class="service-booking-step-num" aria-hidden="true">5</div>
+          <div class="service-booking-step-body">
+            <h3>抵達地點享受包車旅程</h3>
+            <p>我們的專業日本包車團隊會幫助您在日本盡情享受旅行，若有任何問題，可即時聯絡我們的日本緊急聯絡人及台灣服務人員。</p>
+          </div>
+          <div class="service-booking-step-img">
+            <img src="https://framerusercontent.com/images/XH9vdYEf0so9naIwCMyp2pgn2m0.png" alt="享受旅程">
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews service-reviews" id="reviews">
+    <div class="reviews-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">客戶回饋</h2>
+        </div>
+      </div>
+
+      <div class="reviews-row" style="margin-top:var(--s-48)">
+        <div class="reviews-grid">
+          <!-- 鄭先生 -->
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">我們全家 7 個人坐 Hiace 非常剛好，行李也放得下，司機大哥很熱情，還推薦在地美食！</p>
+            </div>
+            <div class="review-avatar">
+              <img src="https://framerusercontent.com/images/xFLZX7wkxyI5Zcl6dEZ8OrlMU.png" alt="鄭先生">
+            </div>
+            <p class="review-name">鄭先生</p>
+            <p class="review-trip">大阪・多日行程包車</p>
+          </div>
+          <!-- Maggie -->
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">時間掌握超棒，一天跑了好多景點都不覺得累，包車真的很值得！</p>
+            </div>
+            <div class="review-avatar">
+              <img src="https://framerusercontent.com/images/lbAADFHGqYe1Ni9cA0AKDzkDtUs.png" alt="Maggie">
+            </div>
+            <p class="review-name">Maggie</p>
+            <p class="review-trip">名古屋・市區包車</p>
+          </div>
+          <!-- 王小姐 -->
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">司機超專業，全程協助長輩上下車，還會講中文，超級貼心！</p>
+            </div>
+            <div class="review-avatar">
+              <img src="https://framerusercontent.com/images/wsA87NhaIza0iEASwqXvovHPr6Q.png" alt="王小姐">
+            </div>
+            <p class="review-name">王小姐</p>
+            <p class="review-trip">東京・市區包車</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="service-faq" id="faq">
+    <div class="service-faq-inner">
+
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">常見問題</h2>
+        </div>
+      </div>
+
+      <ul class="service-faq-list" role="list">
+
+        <li class="service-faq-item">
+          <button class="service-faq-btn" aria-expanded="false" aria-controls="faq-body-1">
+            <span>01. 日本包車為何要乘坐合法營運的綠牌車</span>
+            <span class="service-faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-faq-body" id="faq-body-1" role="region">
+            <ul>
+              <li>綠牌車作為當地合法營運車輛，每日嚴格檢查車輛情況，萬一發生事故，也具有營運車輛保險，乘客也能及時獲得應有保障。</li>
+              <li>在日本要取得綠牌車派遣，須經過嚴格的手續和流程，取得綠牌車的營業資格極其不易，綠牌車相較於黑牌車，更安全性有保障。</li>
+            </ul>
+            <p>我們使用合法營運的綠牌車是為了確保旅客的安全和保障。綠牌車需要經過嚴格的核查和認證，確保車輛和司機都符合安全和運行標準。</p>
+            <p><strong>【法律規定補充事項】</strong></p>
+            <ul>
+              <li>根據《道路運送法》第78條，只有取得許可的營業車輛（即綠牌車）才能載客收費。</li>
+              <li>黑牌車（即私人自用車輛）若進行載客服務並收費，即屬違法營業。</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="service-faq-item">
+          <button class="service-faq-btn" aria-expanded="false" aria-controls="faq-body-2">
+            <span>02. 請問日本包車費用怎麼計價？費用包含及不包含內容有哪些？</span>
+            <span class="service-faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-faq-body" id="faq-body-2" role="region">
+            <p>我們是以每天每車費用作為報價，海獅、阿爾法車型包車旅遊費用詳情如下：</p>
+            <ul>
+              <li>費用包含：中文司機、司機餐費、10小時包車旅遊（含司機回程時間）。</li>
+              <li>費用不包含：景點門票、旅客餐費。</li>
+              <li>超時費用每小時5千日幣。</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="service-faq-item">
+          <button class="service-faq-btn" aria-expanded="false" aria-controls="faq-body-3">
+            <span>03. 請問日本包車旅遊的每日用車時間與距離有限制嗎？</span>
+            <span class="service-faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-faq-body" id="faq-body-3" role="region">
+            <p>每日包車旅遊時間上限為十小時（回程如遇塞車而超時仍須依超時時計費，以現金付款超時費用給司機即可）。</p>
+          </div>
+        </li>
+
+        <li class="service-faq-item">
+          <button class="service-faq-btn" aria-expanded="false" aria-controls="faq-body-4">
+            <span>04. 請問日本包車自由行可以臨時變更或取消行程？</span>
+            <span class="service-faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-faq-body" id="faq-body-4" role="region">
+            <p>包車可以臨時變更行程，只要在每日用車時間及合理的範圍內可以隨心所欲安排您的行程。</p>
+            <p>包車取消或變更日期有可能會產生費用，請聯繫我們公司了解詳細情況。</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="service-cta" id="cta">
+    <div class="service-cta-wave-top" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C180,75 420,10 720,50 C960,80 1200,8 1440,38 L1440,0 Z" fill="#FEF5EA"/>
+      </svg>
+    </div>
+    <div class="service-cta-inner">
+      <div class="service-cta-heading">
+        <h2>從這趟旅程出發，<br>遇見妳心中的理想日本</h2>
+      </div>
+      <div class="service-cta-body">
+        <p>不論妳想包車自在探險城市，還是想在日本慢慢尋找屬於自己的生活片刻，Kado Tokyo 都是妳夢想旅程的起點。只要簡單填個表，專屬妳的行程立刻開啟——走得安心，玩得更深入，每一天都能成為妳的理想旅日回憶！</p>
+        <a href="https://lin.ee/1UVlyHC" class="btn-service-cta" target="_blank" rel="noopener">
+          <span class="btn-service-cta-inner">
+            <span class="btn-service-cta-arrow" aria-hidden="true"></span>
+            出發吧！下一站就是妳的夢幻日本地圖
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-legal-block">
+        <p>旅遊行程提供與合作聲明 本網站所提供之日本旅遊行程與包車服務，由日本合法旅行社 株式会社 Kings Japan 提供與執行，<br>其業者已取得日本政府核發之正式登錄資格：東京都知事登錄旅行業 第2-8641號</p>
+        <p>Kado Tokyo 為本網站營運品牌，提供中文客服、旅遊諮詢與預約媒合服務。</p>
+      </div>
+      <img src="https://framerusercontent.com/images/ZLJxDqw45gxkRJRqrxFhEDqrQ.png" alt="Kings Japan" class="footer-kj-logo">
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.service-faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const bodyId = btn.getAttribute('aria-controls');
+        const body = document.getElementById(bodyId);
+
+        // Close all
+        document.querySelectorAll('.service-faq-btn').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          const bId = b.getAttribute('aria-controls');
+          const bBody = document.getElementById(bId);
+          if (bBody) bBody.classList.remove('open');
+        });
+
+        // Toggle current
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          if (body) body.classList.add('open');
+        }
+      });
+
+      // Keyboard
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

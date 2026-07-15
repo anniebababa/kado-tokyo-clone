@@ -8,7 +8,7 @@
   <link rel="icon" href="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,12 +16,22 @@
   <!-- ===== HEADER ===== -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a href="#services" class="nav-left">服務項目 <span class="nav-chevron">∨</span></a>
+      <div class="nav-dropdown" id="navDropdown">
+        <button class="nav-left" id="navDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          服務項目 <span class="nav-chevron" id="navChevron">∨</span>
+        </button>
+        <div class="nav-dropdown-menu" id="navDropdownMenu" aria-hidden="true">
+          <a href="service.html" class="nav-dropdown-item">日本旅遊包車</a>
+        </div>
+      </div>
       <a href="/" class="nav-logo">
         <img src="images/logo.svg" alt="Kado Tokyo">
       </a>
       <div class="nav-right">
-        <a href="#contact" class="btn-book">立即預約</a>
+        <a href="#contact" class="kado-cta">
+          <span class="kado-cta__left" aria-hidden="true"></span>
+          <span class="kado-cta__label">立即預約</span>
+        </a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="開啟選單">
@@ -31,18 +41,27 @@
       <a href="#services">服務項目</a>
       <a href="#fleet">車隊介紹</a>
       <a href="#blog">最新文章</a>
-      <a href="#contact" class="mobile-btn-book">立即預約</a>
+      <a href="#contact" class="kado-cta">
+        <span class="kado-cta__left" aria-hidden="true"></span>
+        <span class="kado-cta__label">立即預約</span>
+      </a>
     </nav>
   </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="top">
     <div class="hero-bg">
-      <img src="https://framerusercontent.com/images/oqP3cGfWwogX1546vnl2EtGBI.png" alt="日本旅遊">
+      <img src="https://framerusercontent.com/images/EyJTaSt6taGFWzPqkjytA89esgU.png" alt="日本旅遊">
     </div>
     <div class="hero-caption">
       <div class="hero-text">
-        <h1>下一站：東京？<br>快跟我們一起<br>解鎖城市角落的祕密！</h1>
+        <div class="hero-title-wrap">
+          <h1 class="hero-title">
+            <span>下一站：東京？</span><br>
+            <span>快跟我們一起</span><br>
+            <span>解鎖城市角落的祕密！</span>
+          </h1>
+        </div>
         <p class="hero-brand">KADO TOKYO</p>
       </div>
     </div>
@@ -50,236 +69,263 @@
 
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
-    <div class="about-inner">
-      <div class="about-text">
-        <h2>在那些你沒發現的小角落，<br>我們找到了專屬妳的旅行悸動！</h2>
-        <p>「Kado Tokyo」專為熱愛冒險的妳而生，帶妳在旅途中尋找屬於自己的生活儀式感。我們不只帶妳打卡日本在地私房景點，更想讓妳自在穿梭城市巷弄，慢慢體驗屬於妳的日式浪漫。</p>
-        <p>每一次旅行，都像發現生活的驚喜彩蛋。從風格旅宿到日常小店，讓旅人和在地人的距離悄悄拉近，專屬於妳的角落故事正在發生。</p>
-      </div>
-      <div class="about-deco" aria-hidden="true">
-        <span class="deco-num">3</span>
-        <img src="https://framerusercontent.com/images/EyJTaSt6taGFWzPqkjytA89esgU.png" alt="" class="about-img">
-      </div>
+    <div class="about-text">
+      <h2>在那些你沒發現的小角落，<br>我們找到了專屬妳的旅行悸動！</h2>
+      <p>「Kado Tokyo」專為熱愛冒險的妳而生，帶妳在旅途中尋找屬於自己的生活儀式感。我們不只帶妳打卡日本在地私房景點，更想讓妳自在穿梭城市巷弄，慢慢體驗屬於妳的日式浪漫。</p>
+      <p>每一次旅行，都像發現生活的驚喜彩蛋。從風格旅宿到日常小店，讓旅人和在地人的距離悄悄拉近，專屬於妳的角落故事正在發生。</p>
+    </div>
+    <div class="about-deco">
+      <img src="https://framerusercontent.com/images/nPhgr7foRT9MgDmfZ0vltiVtI.png" alt="" class="about-img">
     </div>
   </section>
 
   <!-- ===== SERVICES ===== -->
   <section class="services" id="services">
     <div class="services-inner">
-      <div class="services-header">
-        <p class="sec-kado">KADO TOKYO</p>
-        <h2 class="sec-title">探索你的日本慢旅 <span class="star" aria-hidden="true">✦</span></h2>
+      <div class="sec-head">
+        <img src="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">探索你的日本慢旅 <svg class="sec-pin" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5C5.62 9.5 4.5 8.38 4.5 7S5.62 4.5 7 4.5 9.5 5.62 9.5 7 8.38 9.5 7 9.5z" fill="currentColor"/></svg></h2>
+        </div>
       </div>
 
-      <div class="services-layout">
-        <!-- Left col: service 1 -->
-        <div class="svc-item svc-plan">
-          <div class="svc-img">
-            <img src="https://framerusercontent.com/images/dfFI5bUfVy38fPcHbfCk2Xn0InA.png" alt="専案旅遊規劃">
-          </div>
-          <div class="svc-text">
-            <h3>專屬妳的日本旅遊規劃</h3>
-            <p>不知道從哪玩起？留言妳的旅行風格，讓我們為妳專屬規劃路線吧！</p>
-            <a href="#contact" class="btn-orange-outline">了解更多</a>
-          </div>
+      <!-- Row 1: empty | image | text -->
+      <div class="svc-row svc-row--1">
+        <div class="svc-spacer"></div>
+        <div class="svc-circle-wrap">
+          <div class="svc-blob"></div>
+          <img class="svc-circle-img" src="images/Clip path group.png" alt="専案旅遊規劃">
         </div>
-
-        <!-- Right col: service 2 -->
-        <div class="svc-item svc-charter">
-          <div class="svc-text">
-            <h3>日本包車小旅行</h3>
-            <p>舒適又安心，彈性包車行程輕鬆啟程！從東京出發，妳想去哪、我們都能載妳去。專屬車隊，帶妳自由探索每一個心動目的地！</p>
-            <a href="#fleet" class="btn-orange-outline">了解更多</a>
-          </div>
-          <div class="svc-img">
-            <img src="https://framerusercontent.com/images/g7xfoHClXZIVT1jnARSPpNUFP4.png" alt="日本包車旅行">
-          </div>
+        <div class="svc-text">
+          <h3>專屬妳的日本旅遊規劃</h3>
+          <p>不知道從哪玩起？<br>留言妳的旅行風格，讓我們為妳專屬規劃路線吧！</p>
+          <a href="#contact" class="kado-cta">
+            <span class="kado-cta__left" aria-hidden="true"></span>
+            <span class="kado-cta__label">了解更多</span>
+          </a>
         </div>
+      </div>
 
-        <!-- Full-width: fleet intro -->
-        <div class="svc-item svc-fleet-intro">
-          <div class="svc-text">
-            <h3>貼心車隊大揭密</h3>
-            <p>我們的司機都是在地達人，熟悉日本各大景點＆交通路線，還會說中文，溝通零距離！不管妳去哪裡，都有專業夥伴陪妳一起，旅程安全又安心，玩得更盡興。</p>
-          </div>
+      <!-- Row 2: image | text | empty -->
+      <div class="svc-row svc-row--2">
+        <div class="svc-circle-wrap">
+          <div class="svc-blob"></div>
+          <img class="svc-circle-img" src="https://framerusercontent.com/images/dfFI5bUfVy38fPcHbfCk2Xn0InA.png" alt="日本旅遊包車">
+        </div>
+        <div class="svc-text">
+          <h3>日本包車小旅行</h3>
+          <p>舒適又安心，彈性包車行程輕鬆啟程！<br>從東京出發，妳想去哪、我們都能載妳去。<br>專屬車隊，帶妳自由探索每一個心動目的地！</p>
+          <a href="#fleet" class="kado-cta">
+            <span class="kado-cta__left" aria-hidden="true"></span>
+            <span class="kado-cta__label">了解更多</span>
+          </a>
+        </div>
+        <div class="svc-spacer"></div>
+      </div>
+
+      <!-- Row 3: text | image (larger) -->
+      <div class="svc-row svc-row--3">
+        <div class="svc-text">
+          <h3>貼心車隊大揭密</h3>
+          <p>我們的司機都是在地達人，熟悉日本各大景點＆交通路線，還會說中文，溝通零距離！<br>不管妳去哪裡，都有專業夥伴陪妳一起，旅程安全又安心，玩得更盡興。</p>
+        </div>
+        <div class="svc-circle-wrap">
+          <div class="svc-blob svc-blob--tr"></div>
+          <img class="svc-circle-img svc-circle-img--right" src="images/Clip path group (2).png" alt="車隊介紹">
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===== MARQUEE 1 ===== -->
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span><span>日本旅遊</span><span class="mdot">●</span>
-    </div>
-  </div>
 
   <!-- ===== FLEET ===== -->
   <section class="fleet" id="fleet">
+    <div class="fleet-wave fleet-wave--top" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C360,100 720,28 1080,75 C1260,100 1380,48 1440,60 L1440,0 Z" fill="#ffffff"/>
+      </svg>
+    </div>
     <div class="fleet-inner">
-      <div class="fleet-header">
-        <p class="sec-kado">KADO TOKYO</p>
-        <h2 class="sec-title">車種介紹 <span class="star" aria-hidden="true">✦</span></h2>
-        <p class="fleet-desc">無論是小家庭出遊、姐妹同樂還是好友揪團，我們都準備好了各種包車選擇，讓妳的日本旅程輕鬆又自在！不管人多還是行李多，這裡都有最適合妳的車款～</p>
+      <div class="fleet-head">
+        <img src="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png" alt="" class="fleet-mascot">
+        <h2 class="fleet-title">車種介紹 <svg class="sec-pin" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5C5.62 9.5 4.5 8.38 4.5 7S5.62 4.5 7 4.5 9.5 5.62 9.5 7 8.38 9.5 7 9.5z" fill="currentColor"/></svg></h2>
       </div>
+      <p class="fleet-intro-text">我們提供多種不同類型的日本包車服務，以滿足您的各種出行需求，<br>以下是我們的幾種常用車型：</p>
       <div class="fleet-grid">
-        <div class="fleet-card">
-          <div class="fleet-img">
-            <img src="https://framerusercontent.com/images/1P5hBRopnyrwG9VUyvp29kmpew.png" alt="6人座阿爾法 Alphard">
+        <div class="fleet-item">
+          <h3 class="fleet-car-name">6人座阿爾法（Alphard）</h3>
+          <div class="fleet-card">
+            <div class="fleet-img">
+              <img src="images/Rectangle.png" alt="6人座阿爾法 Alphard">
+            </div>
+            <div class="fleet-desc-box">
+              <p>頂級舒適的乘坐體驗，適合小家庭與朋友出遊。</p>
+            </div>
           </div>
-          <div class="fleet-body">
-            <h3>6人座阿爾法（Alphard）</h3>
-            <p>放鬆享受每一段旅程，和最愛的人一起創造專屬回憶吧！頂級舒適的乘坐體驗，適合小家庭與朋友出遊。</p>
-            <a href="#contact" class="btn-orange-outline">了解更多</a>
+          <div class="fleet-more-wrap">
+            <a href="#contact" class="kado-cta">
+              <span class="kado-cta__left" aria-hidden="true"></span>
+              <span class="kado-cta__label">了解更多</span>
+            </a>
           </div>
         </div>
-        <div class="fleet-card">
-          <div class="fleet-img">
-            <img src="https://framerusercontent.com/images/nbuaeV5JJpnFWFU3aJtO4fmObCI.png" alt="9人座海獅 Hiace">
+        <div class="fleet-item">
+          <h3 class="fleet-car-name">9人座海獅（Hiace）</h3>
+          <div class="fleet-card">
+            <div class="fleet-img">
+              <img src="images/Rectangle.jpg" alt="9人座海獅 Hiace">
+            </div>
+            <div class="fleet-desc-box">
+              <p>空間寬敞，行李放得下，適合多人團體或長途行程。</p>
+            </div>
           </div>
-          <div class="fleet-body">
-            <h3>9人座海獅（Hiace）</h3>
-            <p>一起出遊不用煩惱行李多，寬敞空間讓大家都能舒服享受每一段旅程！大團出遊、多行李首選。</p>
-            <a href="#contact" class="btn-orange-outline">了解更多</a>
+          <div class="fleet-more-wrap">
+            <a href="#contact" class="kado-cta">
+              <span class="kado-cta__left" aria-hidden="true"></span>
+              <span class="kado-cta__label">了解更多</span>
+            </a>
           </div>
         </div>
       </div>
+    </div>
+    <div class="fleet-wave fleet-wave--bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,100 C360,0 720,75 1080,25 C1260,0 1380,65 1440,42 L1440,100 Z" fill="#ffffff"/>
+      </svg>
     </div>
   </section>
-
-  <!-- ===== MARQUEE 2 ===== -->
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span><span>客戶回饋</span><span class="mdot">●</span>
-    </div>
-  </div>
 
   <!-- ===== REVIEWS ===== -->
   <section class="reviews">
     <div class="reviews-inner">
-      <div class="reviews-header">
-        <p class="sec-kado">KADO TOKYO</p>
-        <h2 class="sec-title">客戶回饋 <span class="star" aria-hidden="true">✦</span></h2>
+      <div class="sec-divider"></div>
+      <div class="sec-head sec-head--right">
+        <img src="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">客戶回饋 <svg class="sec-pin" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5C5.62 9.5 4.5 8.38 4.5 7S5.62 4.5 7 4.5 9.5 5.62 9.5 7 8.38 9.5 7 9.5z" fill="currentColor"/></svg></h2>
+        </div>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <p class="review-quote">「我們全家 7 個人坐 Hiace 非常剛好，行李也放得下，司機大哥很熱情，還推薦在地美食！」</p>
-          <div class="review-footer">
+      <div class="reviews-row">
+        <div class="reviews-grid">
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">我們全家 7 個人坐 Hiace 非常剛好，行李也放得下，司機大哥很熱情，還推薦在地美食！</p>
+            </div>
             <div class="review-avatar">
               <img src="https://framerusercontent.com/images/wsA87NhaIza0iEASwqXvovHPr6Q.png" alt="鄭先生">
             </div>
-            <div>
-              <p class="review-name">鄭先生</p>
-              <p class="review-trip">大阪・多日行程包車</p>
+            <p class="review-name">鄭先生</p>
+            <p class="review-trip">大阪・多日行程包車</p>
+          </div>
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">時間掌握超棒，一天跑了好多景點都不覺得累，包車真的很值得！</p>
             </div>
+            <div class="review-avatar">
+              <img src="https://framerusercontent.com/images/wsA87NhaIza0iEASwqXvovHPr6Q.png" alt="Maggie">
+            </div>
+            <p class="review-name review-name--accent">Maggie</p>
+            <p class="review-trip">名古屋・市區包車</p>
+          </div>
+          <div class="review-item">
+            <div class="review-card">
+              <p class="review-quote">司機超專業，全程協助長輩上下車，還會講中文，超級貼心！</p>
+            </div>
+            <div class="review-avatar">
+              <img src="https://framerusercontent.com/images/wsA87NhaIza0iEASwqXvovHPr6Q.png" alt="王小姐">
+            </div>
+            <p class="review-name">王小姐</p>
+            <p class="review-trip">東京・市區包車</p>
           </div>
         </div>
-        <div class="review-card">
-          <p class="review-quote">「時間掌握超棒，一天跑了好多景點都不覺得累，包車真的很值得！」</p>
-          <div class="review-footer">
-            <div class="review-avatar review-avatar-initial">M</div>
-            <div>
-              <p class="review-name">Maggie</p>
-              <p class="review-trip">名古屋・市區包車</p>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <p class="review-quote">「司機超專業，全程協助長輩上下車，還會講中文，超級貼心！」</p>
-          <div class="review-footer">
-            <div class="review-avatar review-avatar-initial">王</div>
-            <div>
-              <p class="review-name">王小姐</p>
-              <p class="review-trip">東京・市區包車</p>
-            </div>
-          </div>
+        <div class="reviews-more">
+          <a href="#" class="kado-cta">
+            <span class="kado-cta__left" aria-hidden="true"></span>
+            <span class="kado-cta__label">瀏覽全部</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== MARQUEE 3 ===== -->
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span><span>最新文章</span><span class="mdot">●</span>
-    </div>
-  </div>
-
   <!-- ===== BLOG ===== -->
   <section class="blog" id="blog">
     <div class="blog-inner">
-      <div class="blog-header">
-        <p class="sec-kado">KADO TOKYO</p>
-        <h2 class="sec-title">最新文章 <span class="star" aria-hidden="true">✦</span></h2>
+      <div class="sec-divider"></div>
+      <div class="sec-head sec-head--right">
+        <img src="https://framerusercontent.com/images/VXnki2tdxS1v5XilyBk1FVsUMI.png" alt="" class="sec-mascot">
+        <div class="sec-head-text">
+          <p class="sec-kado">KADO TOKYO</p>
+          <h2 class="sec-h2">最新文章 <svg class="sec-pin" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5C5.62 9.5 4.5 8.38 4.5 7S5.62 4.5 7 4.5 9.5 5.62 9.5 7 8.38 9.5 7 9.5z" fill="currentColor"/></svg></h2>
+        </div>
       </div>
       <div class="blog-grid">
         <article class="blog-card">
           <div class="blog-img">
             <img src="https://framerusercontent.com/images/3qunj2gOXlYDlupx2HEsfjm1iI.png" alt="東京近郊一日遊">
-            <span class="blog-tag">日本旅遊</span>
           </div>
           <div class="blog-body">
-            <h3>東京近郊<br>一日遊推薦<br>跟著司機走私房景點</h3>
-            <a href="#" class="blog-link">閱讀更多 →</a>
+            <p class="blog-cat">日本旅遊</p>
+            <h3>東京近郊<br>一日遊推薦</h3>
+            <p class="blog-desc">跟著司機走私房景點</p>
           </div>
         </article>
         <article class="blog-card">
           <div class="blog-img">
             <img src="https://framerusercontent.com/images/xFLZX7wkxyI5Zcl6dEZ8OrlMU.png" alt="日本專案旅遊全攻略">
-            <span class="blog-tag">日本旅遊</span>
           </div>
           <div class="blog-body">
-            <h3>日本專案旅遊<br>全攻略<br>2025最新行程規劃與注意事項懶人包</h3>
-            <a href="#" class="blog-link">閱讀更多 →</a>
+            <p class="blog-cat">日本旅遊</p>
+            <h3>日本專案旅遊<br>全攻略</h3>
+            <p class="blog-desc">2025最新行程規劃與注意事項懶人包</p>
           </div>
         </article>
         <article class="blog-card">
           <div class="blog-img">
             <img src="https://framerusercontent.com/images/lbAADFHGqYe1Ni9cA0AKDzkDtUs.png" alt="包車VS自駕">
-            <span class="blog-tag">日本旅遊</span>
           </div>
           <div class="blog-body">
-            <h3>包車 VS 自駕<br>哪種旅遊方式<br>更適合你？</h3>
-            <a href="#" class="blog-link">閱讀更多 →</a>
+            <p class="blog-cat">日本旅遊</p>
+            <h3>包車 VS 自駕</h3>
+            <p class="blog-desc">哪種旅遊方式更適合你？</p>
           </div>
         </article>
       </div>
       <div class="blog-more">
-        <a href="#" class="btn-outline-dark">瀏覽全部</a>
+        <a href="#" class="kado-cta">
+          <span class="kado-cta__left" aria-hidden="true"></span>
+          <span class="kado-cta__label">瀏覽全部</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="cta" id="contact">
-    <div class="cta-bg-img" aria-hidden="true">
-      <img src="https://framerusercontent.com/images/eVuTlkQSZBVthhIAGUGQGglcvok.png" alt="">
+    <div class="cta-wave-top" aria-hidden="true">
+      <svg viewBox="0 0 1440 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,0 L1440,165 C1260,185 1020,150 780,195 C560,235 280,188 0,218 Z" fill="#ffffff"/>
+      </svg>
     </div>
-    <div class="cta-inner">
-      <div class="cta-heading">
-        <h2>從這裡啟程，<br>遇見屬於妳的日本</h2>
-      </div>
-      <div class="cta-body">
-        <p>無論妳想包車冒險城市巷弄，還是在日本尋找屬於自己的療癒時光，Kado Tokyo 都是妳專屬的旅程起點。只要輕鬆填寫小小問卷，妳的專屬行程馬上開啟：玩得安心、走得深入，每一天都像自己的日劇片段。</p>
-        <a href="#" class="btn-cta">
-          <span class="btn-cta-main">出發吧！</span>
-          <span class="btn-cta-sub">下一站就是妳的夢幻日本地圖</span>
-        </a>
-      </div>
+    <div class="cta-title">
+      <h2>從這趟旅程開始，<br>遇見屬於妳的日本</h2>
+    </div>
+    <div class="cta-body">
+      <p>無論妳想包車冒險城市巷弄，還是在日本尋找屬於自己的療癒時光，Kado Tokyo 都是妳專屬的旅程起點。只要輕鬆填寫小小問卷，妳的專屬行程馬上開啟：玩得安心、走得深入，每一天都像自己的日劇片段。</p>
+      <a href="#contact" class="kado-cta kado-cta--multiline">
+        <span class="kado-cta__left" aria-hidden="true"></span>
+        <span class="kado-cta__label">出發吧！<br>下一站就是妳的夢幻日本地圖</span>
+      </a>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-legal-block">
-        <p>旅遊行程提供與合作聲明 本網站所提供之日本旅遊行程與包車服務，由日本合法旅行社 株式會社 Kings Japan 提供與執行，其業者已取得日本政府核發之正式登錄資格：東京都知事登錄旅行業 第2-8641號</p>
-        <p>Kado Tokyo 為本網站營運品牌，提供中文客服、旅遊諮詢與預約媒合服務。</p>
-      </div>
-      <div class="footer-logo-row">
-        <img src="images/logo.svg" alt="Kado Tokyo" class="footer-logo">
-        <p class="footer-kingsjapan">KINGS JAPAN</p>
-      </div>
+      <p class="footer-legal">旅遊行程提供與合作聲明 本網站所提供之日本旅遊行程與包車服務，由日本合法旅行社 株式会社 Kings Japan 提供與執行，<br>其業者已取得日本政府核發之正式登錄資格：東京都知事登錄旅行業 第2-8641號</p>
+      <p class="footer-brand-text">Kado Tokyo 為本網站營運品牌，提供中文客服、旅遊諮詢與預約媒合服務。</p>
+      <img src="https://framerusercontent.com/images/ZLJxDqw45gxkRJRqrxFhEDqrQ.png" alt="Kings Japan" class="footer-kj-logo">
     </div>
   </footer>
 
