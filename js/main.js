@@ -1,66 +1,56 @@
-// ===== HEADER SCROLL EFFECT =====
+// Mark JS as active so reveal animations apply
+document.documentElement.classList.add('js');
+
+// ===== HEADER SCROLL =====
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 
 // ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+const mobileNav  = document.getElementById('mobileNav');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
+  const open = hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open', open);
+  mobileNav.setAttribute('aria-hidden', String(!open));
 });
 
-// Close mobile menu on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
+mobileNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
   });
 });
 
-// ===== SCROLL ANIMATIONS =====
-const observerOptions = {
-  threshold: 0.12,
-  rootMargin: '0px 0px -40px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
-}, observerOptions);
+}, { threshold: 0.10, rootMargin: '0px 0px -32px 0px' });
 
-const animatedElements = document.querySelectorAll(
-  '.service-card, .fleet-card, .review-card, .blog-card, .about-text, .about-images, .section-header'
-);
-
-animatedElements.forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(32px)';
-  el.style.transition = `opacity 0.6s ease ${i * 0.07}s, transform 0.6s ease ${i * 0.07}s`;
-  observer.observe(el);
+document.querySelectorAll(
+  '.about-text, .about-deco, .svc-item, .fleet-card, .review-card, .blog-card, .cta-text, .cta-img'
+).forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.transitionDelay = `${(i % 4) * 80}ms`;
+  revealObserver.observe(el);
 });
 
-// ===== SMOOTH SCROLL OFFSET (for fixed header) =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+// ===== SMOOTH SCROLL (offset for fixed header) =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 68;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
     }
   });
 });
