@@ -6,6 +6,58 @@
    ============================================================ */
 
 /* ============================================================
+   BUTTONS (service page specific)
+   ============================================================ */
+
+/* 立即預約 — filled orange pill in nav */
+.btn-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 22px;
+  background: var(--c-primary);
+  color: var(--c-white);
+  font-size: var(--fs-14);
+  font-weight: 600;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  transition: background var(--t-base) var(--ease), transform var(--t-fast) var(--ease);
+}
+.btn-book:hover { background: var(--c-primary-dark); transform: translateY(-1px); }
+
+/* 前往預約 / 立即預約包車 — arrow pill button */
+.btn-arrow-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
+  background: var(--c-primary);
+  color: var(--c-white);
+  font-size: var(--fs-15);
+  font-weight: 600;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  transition: background var(--t-base) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+.btn-arrow-more::after {
+  content: '→';
+  font-size: 16px;
+}
+.btn-arrow-more:hover {
+  background: var(--c-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,149,94,0.35);
+}
+.btn-arrow-more--lg {
+  height: 52px;
+  padding: 0 32px;
+  font-size: var(--fs-16);
+  border-radius: var(--r-full);
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 .service-hero {
