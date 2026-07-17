@@ -16,13 +16,10 @@
 .problem-head h3,
 .service-benefit-body h3,
 .service-plan-body h3,
-.service-booking-step-body h3,
 .service-cta-heading h2 {
   font-family: "Noto Serif TC", "Source Han Serif TC", serif;
   font-weight: 900;
 }
-
-
 
 /* 立即預約 — filled orange pill in nav */
 .btn-book {
@@ -290,17 +287,6 @@
   object-fit: fill;
   margin-right: 16px;
 }
-/* 包車預約流程: 虛線在右 */
-.booking-sec-head {
-  justify-content: flex-start !important;
-}
-.booking-vector-line {
-  flex: 1;
-  min-width: 0;
-  height: 6px;
-  object-fit: fill;
-  margin-left: 16px;
-}
 /* 客戶回饋: 虛線在左 */
 .reviews-sec-head {
   justify-content: flex-end !important;
@@ -520,82 +506,182 @@
    BOOKING FLOW ("包車預約流程")
    ============================================================ */
 .service-booking {
-  background: var(--c-white);
-  padding: var(--s-80) 0 var(--s-96);
+  background: #ffffff;
+  padding-top: 24px;
+  padding-bottom: 0;
   margin-top: -100px;
 }
-.service-booking-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 var(--pad-x);
-}
-.service-booking-steps {
-  margin-top: var(--s-56);
+
+/* ── 標題列 ──────────────────────────────────────────────── */
+.steps-header {
+  max-width: 806px;
+  margin: 0 auto 29px;
+  padding: 0 26px;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  align-items: center;
+  justify-content: flex-start;
 }
-.service-booking-step {
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  gap: 24px;
-  align-items: flex-start;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--c-border);
-  position: relative;
+.steps-header-icon {
+  width: 42px;
+  height: auto;
+  margin-right: 13px;
+  flex-shrink: 0;
 }
-.service-booking-step:last-child { border-bottom: none; }
-.service-booking-step-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--c-primary);
-  color: var(--c-white);
-  font-family: var(--font-display);
-  font-size: var(--fs-20);
+.steps-title {
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
+  font-size: 38px;
   font-weight: 700;
+  line-height: 1;
+  color: #111111;
+  margin: 0;
+  white-space: nowrap;
+}
+.steps-header-pin {
+  width: 26px;
+  height: auto;
+  margin-left: 23px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.steps-header-line {
+  display: block;
+  width: 325px;
+  border-top: 2px dotted #FF8C5A;
+  flex-shrink: 0;
+}
+
+/* ── 步驟列 ──────────────────────────────────────────────── */
+.steps-list {
+  width: 100%;
+}
+.steps-row {
+  width: 100%;
+  min-height: 195px;
+  box-sizing: border-box;
+}
+.steps-row:first-child {
+  min-height: 254px;
+}
+.steps-row--odd {
+  background-color: #FAFAF8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Cpolygon points='25,4 46,25 25,46 4,25' fill='none' stroke='%23AAAAAA' stroke-width='0.8' stroke-opacity='0.22'/%3E%3C/svg%3E");
+  background-size: 50px 50px;
+}
+.steps-row--even {
+  background-color: #FEF5EA;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='9' fill='none' stroke='%23C8A060' stroke-width='0.8' stroke-opacity='0.22'/%3E%3Ccircle cx='0' cy='0' r='9' fill='none' stroke='%23C8A060' stroke-width='0.8' stroke-opacity='0.22'/%3E%3Ccircle cx='48' cy='0' r='9' fill='none' stroke='%23C8A060' stroke-width='0.8' stroke-opacity='0.22'/%3E%3Ccircle cx='0' cy='48' r='9' fill='none' stroke='%23C8A060' stroke-width='0.8' stroke-opacity='0.22'/%3E%3Ccircle cx='48' cy='48' r='9' fill='none' stroke='%23C8A060' stroke-width='0.8' stroke-opacity='0.22'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+}
+.steps-row-inner {
+  width: 100%;
+  max-width: 806px;
+  margin: 0 auto;
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: 99px 468px 189px;
+  column-gap: 23px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ── 步驟標記（折角圖形 + 數字） ─────────────────────────── */
+.step-marker {
+  position: relative;
+  width: 99px;
+  height: 101px;
+  flex-shrink: 0;
+}
+.step-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: auto;
+  display: block;
+}
+.step-number {
+  position: absolute;
+  top: 36px;
+  left: 55px;
+  display: block;
+  height: 65px;
+  width: auto;
+}
+
+/* ── 文字區 ──────────────────────────────────────────────── */
+.step-body {
+  text-align: left;
+}
+.step-body h3 {
+  font-family: "Noto Sans TC", "Source Han Sans TC", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #D94B48;
+  margin: 0 0 9px;
+}
+.step-body p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #222222;
+  margin: 0;
+}
+
+/* ── 按鈕（橘色描邊箭頭） ────────────────────────────────── */
+.step-btns {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 16px;
+}
+.steps-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px 0 18px;
+  color: #FF8C5A;
+  font-size: 16px;
+  border: 1.5px solid #FF8C5A;
+  border-left: none;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  margin-left: 14px;
+}
+.steps-btn::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 14px solid #FF8C5A;
+}
+
+/* ── 圖片 ────────────────────────────────────────────────── */
+.step-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(255,149,94,0.30);
 }
-.service-booking-step-body { flex: 1; }
-.service-booking-step-body h3 {
-  font-family: var(--font-display);
-  font-size: var(--fs-18);
-  font-weight: 700;
-  color: var(--c-text);
-  margin-bottom: var(--s-8);
-  line-height: var(--lh-snug);
-}
-.service-booking-step-body p {
-  font-size: var(--fs-14);
-  color: #666;
-  line-height: var(--lh-loose);
-  margin-bottom: var(--s-16);
-}
-.service-booking-step-body p:last-child { margin-bottom: 0; }
-.service-booking-step-btns {
-  display: flex;
-  gap: var(--s-12);
-  flex-wrap: wrap;
-  margin-top: var(--s-16);
-}
-.service-booking-step-img {
-  width: 160px;
-  height: 160px;
-  border-radius: var(--r-12);
-  overflow: hidden;
-  flex-shrink: 0;
-  align-self: flex-start;
-}
-.service-booking-step-img img {
-  width: 160px;
-  height: 160px;
+.step-img img {
+  width: 182px;
+  height: 130px;
   object-fit: cover;
+  object-position: center;
+  border-radius: 29px;
   display: block;
-  font-size: 12px;
+  border: none;
+  box-shadow: none;
+}
+.step-img img.step-img--contain {
+  object-fit: contain;
+  background: transparent;
 }
 
 /* ============================================================
