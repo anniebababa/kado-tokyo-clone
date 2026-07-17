@@ -40,7 +40,10 @@
         <img src="images/logo.svg" alt="Kado Tokyo">
       </a>
       <div class="nav-right">
-        <a href="https://lin.ee/1UVlyHC" class="btn-book" target="_blank" rel="noopener"><span>立即預約</span></a>
+        <a href="https://lin.ee/1UVlyHC" class="kado-cta" target="_blank" rel="noopener">
+          <span class="kado-cta__left" aria-hidden="true"></span>
+          <span class="kado-cta__label">立即預約</span>
+        </a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="開啟選單">
@@ -59,20 +62,18 @@
   <section class="service-hero">
     <div class="service-hero-inner">
       <div class="service-hero-text">
-        <p class="sec-kado">KADO TOKYO</p>
-        <h1>日本旅遊包車</h1>
-        <p>不管是第一次探險日本，還是想深度挖掘城市小角落，Kado Tokyo 的包車服務都能為妳量身打造專屬行程！高自由度、超舒適又安全，讓妳把每一分旅程都用在最想看的風景上。</p>
-        <p class="service-hero-tagline">一起出發，解鎖妳的專屬日本冒險吧！</p>
-        <div style="margin-top:8px;">
-          <a href="https://lin.ee/1UVlyHC" class="btn-arrow-more btn-arrow-more--lg" target="_blank" rel="noopener"><span>立即預約包車</span></a>
+        <div class="service-hero-title-row">
+          <img src="images/Group拷貝.png" alt="" class="service-hero-icon">
+          <h1>日本旅遊包車</h1>
         </div>
+        <p>不管是第一次探險日本，還是想深度挖掘城市小角落，Kado Tokyo 的包車服務都能為妳量身打造專屬行程！高自由度、超舒適又安全，讓妳把每一分旅程都用在最想看的風景上。</p>
+        <p>一起出發，解鎖妳的專屬日本冒險吧！</p>
+        <div class="service-hero-blob-left"></div>
       </div>
       <div class="service-hero-img">
-        <img src="https://framerusercontent.com/images/ccmZEEJOV0zmmCtrGp2otQO3A.png"
+        <img src="images/Group.png"
              alt="日本旅遊包車 — 東京街道">
-        <img class="service-hero-deco"
-             src="https://framerusercontent.com/images/TKq6wako3pX4DqfFmCFAtxD0.png"
-             alt="">
+        <div class="service-hero-blob-right"></div>
       </div>
     </div>
     <div class="service-hero-wave">
@@ -87,59 +88,59 @@
     <div class="service-problems-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">你是否有以下困擾？</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
-      <!-- 1: text-left, img-right -->
-      <div class="service-problem-row">
-        <div class="service-problem-text">
-          <h3>語言不通？<br>迷路真的很崩潰！</h3>
-          <p>日本交通超複雜，不會日文、又不熟路線，出門真的壓力山大！一不小心搭錯車、看不懂指示，整天行程都可能大亂～別擔心，有我們貼心帶路，旅程輕鬆又自在，玩得更安心！</p>
-        </div>
-        <div class="service-problem-img">
-          <img src="https://framerusercontent.com/images/CASnaJR7JjWnihpaVkNKvJS2SAo.png"
-               alt="語言不通">
-        </div>
-      </div>
+      <div class="problems-grid">
 
-      <!-- 2: img-left, text-right -->
-      <div class="service-problem-row service-problem-row--reverse">
-        <div class="service-problem-text">
-          <h3>行李太多，<br>移動好崩潰！</h3>
-          <p>拖著行李轉車真的超麻煩，尤其還有小朋友或家人一起，更是考驗耐力～光是搬行李上下月台、找出口，就已經快累壞啦！放心，有我們包車在，輕鬆帶妳到每個想去的地方，行李再多也不怕！</p>
-        </div>
-        <div class="service-problem-img">
-          <img src="https://framerusercontent.com/images/sP78bVXMGc18YhCpka3jOYZMpE.png"
-               alt="行李太多移動不便">
-        </div>
-      </div>
+        <!-- 1: top-left — title left, image right -->
+        <article class="problem-item top">
+          <div class="problem-head text-image">
+            <h3>語言不通？<br>迷路真的很崩潰！</h3>
+            <div class="speech-image tail-left">
+              <img src="images/圖.png" alt="語言不通">
+            </div>
+          </div>
+          <p class="problem-body">日本交通超複雜，不會日文、又不熟路線，出門真的壓力山大！一不小心搭錯車、看不懂指示，整天行程都可能大亂～別擔心，有我們貼心帶路，旅程輕鬆又自在，玩得更安心！</p>
+        </article>
 
-      <!-- 3: text-left, img-right -->
-      <div class="service-problem-row">
-        <div class="service-problem-text">
-          <h3>一天想跑好多景點，<br>行程超難排！</h3>
-          <p>交通轉來轉去，時間都花在趕車上，行程很容易亂成一團。有時地鐵坐錯、巴士沒搭上，Google 地圖也不靈光，本來想輕鬆玩，結果整天都在車上漂流～其實可以更輕鬆，把路程交給我們，玩景點不再瞎忙趕車！</p>
-        </div>
-        <div class="service-problem-img">
-          <img src="https://framerusercontent.com/images/UiyoY2ml5BgGJ33cfMa0ReUNbSw.png"
-               alt="行程難排">
-        </div>
-      </div>
+        <!-- 2: top-right — title left, image right -->
+        <article class="problem-item top">
+          <div class="problem-head text-image">
+            <h3>行李太多，<br>移動好崩潰！</h3>
+            <div class="speech-image tail-left">
+              <img src="images/Clip path group拷貝2.png" alt="行李太多移動不便">
+            </div>
+          </div>
+          <p class="problem-body">拖著行李轉車真的超麻煩，尤其還有小朋友或家人一起，更是考驗耐力～光是搬行李上下月台、找出口，就已經快累壞啦！放心，有我們包車在，輕鬆帶妳到每個想去的地方，行李再多也不怕！</p>
+        </article>
 
-      <!-- 4: img-left, text-right -->
-      <div class="service-problem-row service-problem-row--reverse">
-        <div class="service-problem-text">
-          <h3>想去郊區，<br>沒車真的到不了！</h3>
-          <p>像富士山、輕井澤這些夢幻景點，交通真的不方便，班次少、轉車又花時間，一天能去的地方超有限。有了包車，想去哪就去哪，郊區美景輕鬆一網打盡！</p>
-        </div>
-        <div class="service-problem-img">
-          <img src="https://framerusercontent.com/images/6uRPKIbD9C8rDLioPPv98Jjo8.png"
-               alt="郊區交通不便">
-        </div>
+        <!-- 3: bottom-left — image left, title right -->
+        <article class="problem-item bottom">
+          <div class="problem-head image-text">
+            <div class="speech-image tail-right">
+              <img src="images/_分離模式.png" alt="行程難排">
+            </div>
+            <h3>一天想跑好多景點，<br>行程超難排！</h3>
+          </div>
+          <p class="problem-body">交通轉來轉去，時間都花在趕車上，行程很容易亂成一團。有時地鐵坐錯、巴士沒搭上，Google 地圖也不靈光，本來想輕鬆玩，結果整天都在車上漂流～其實可以更輕鬆，把路程交給我們，玩景點不再瞎忙趕車！</p>
+        </article>
+
+        <!-- 4: bottom-right — image left, title right -->
+        <article class="problem-item bottom">
+          <div class="problem-head image-text">
+            <div class="speech-image tail-right">
+              <img src="images/_分離模式 (1).png" alt="郊區交通不便">
+            </div>
+            <h3>想去郊區，<br>沒車真的到不了！</h3>
+          </div>
+          <p class="problem-body">像富士山、輕井澤這些夢幻景點，交通真的不方便，班次少、轉車又花時間，一天能去的地方超有限。有了包車，想去哪就去哪，郊區美景輕鬆一網打盡！</p>
+        </article>
+
       </div>
 
     </div>
@@ -149,37 +150,51 @@
   <section class="service-benefits" id="benefits">
     <div class="service-benefits-inner">
 
-      <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+      <div class="sec-head benefits-sec-head">
+        <img src="images/Vector.png" alt="" class="benefits-vector-line">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">輕鬆享受包車旅行</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
-      <div class="service-benefits-grid">
-        <!-- 01 large card -->
-        <div class="service-benefit-card service-benefit-card--large">
-          <div class="service-benefit-body">
-            <div class="service-benefit-num">01</div>
-            <h3>彈性行程　想怎麼玩都可以</h3>
-            <p>行程完全配合妳的需求設計，不怕大眾交通麻煩，想怎麼排就怎麼排！</p>
+      <div class="benefits-list">
+        <!-- Top row: 01 & 02 -->
+        <div class="benefits-row">
+          <div class="benefit-item">
+            <div class="benefit-num-wrap">
+              <img src="images/圈01.png" alt="01" class="benefit-num-img">
+              <div class="benefit-dots"><span class="benefit-dot"></span><span class="benefit-dot"></span></div>
+            </div>
+            <div class="benefit-content">
+              <h3>彈性行程　想怎麼玩都可以</h3>
+              <p>行程完全配合妳的需求設計，不怕大眾交通麻煩，想怎麼排就怎麼排！</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-num-wrap">
+              <img src="images/圈01 (1).png" alt="02" class="benefit-num-img">
+              <div class="benefit-dots"><span class="benefit-dot"></span><span class="benefit-dot"></span></div>
+            </div>
+            <div class="benefit-content">
+              <h3>服務範圍超廣</h3>
+              <p>東京、橫濱、箱根、河口湖、輕井澤…熱門郊區景點都能包！揪閨蜜、家人一起出發超方便。</p>
+            </div>
           </div>
         </div>
-        <!-- 02 -->
-        <div class="service-benefit-card">
-          <div class="service-benefit-body">
-            <div class="service-benefit-num">02</div>
-            <h3>服務範圍超廣</h3>
-            <p>東京、橫濱、箱根、河口湖、輕井澤…熱門郊區景點都能包！揪閨蜜、家人一起出發超方便。</p>
-          </div>
-        </div>
-        <!-- 03 -->
-        <div class="service-benefit-card">
-          <div class="service-benefit-body">
-            <div class="service-benefit-num">03</div>
-            <h3>中文司機 溝通無障礙</h3>
-            <p>每位司機都會中文，行程問路、臨時改動都不用擔心，讓旅途輕鬆又自在。</p>
+
+        <!-- Bottom row: 03 centered -->
+        <div class="benefits-row benefits-row--bottom">
+          <div class="benefit-item">
+            <div class="benefit-num-wrap">
+              <img src="images/圈01 (2).png" alt="03" class="benefit-num-img">
+              <div class="benefit-dots"><span class="benefit-dot"></span><span class="benefit-dot"></span></div>
+            </div>
+            <div class="benefit-content">
+              <h3>中文司機 溝通無障礙</h3>
+              <p>每位司機都會中文，行程問路、臨時改動都不用擔心，讓旅途輕鬆又自在。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -192,11 +207,11 @@
     <div class="service-plans-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">包車類型介紹</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
       <p class="service-plans-subtitle">依您的需求選擇合適方案</p>
 
@@ -231,11 +246,11 @@
     <div class="service-audience-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">我適合包車旅遊嗎？</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
       <div class="service-audience-grid">
@@ -279,11 +294,11 @@
     <div class="service-booking-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">包車預約流程</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
       <ol class="service-booking-steps" aria-label="包車預約流程">
@@ -356,11 +371,11 @@
     <div class="reviews-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">客戶回饋</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
       <div class="reviews-row" style="margin-top:var(--s-48)">
@@ -370,9 +385,6 @@
             <div class="review-card">
               <p class="review-quote">我們全家 7 個人坐 Hiace 非常剛好，行李也放得下，司機大哥很熱情，還推薦在地美食！</p>
             </div>
-            <div class="review-avatar">
-              <img src="https://framerusercontent.com/images/xFLZX7wkxyI5Zcl6dEZ8OrlMU.png" alt="鄭先生">
-            </div>
             <p class="review-name">鄭先生</p>
             <p class="review-trip">大阪・多日行程包車</p>
           </div>
@@ -381,9 +393,6 @@
             <div class="review-card">
               <p class="review-quote">時間掌握超棒，一天跑了好多景點都不覺得累，包車真的很值得！</p>
             </div>
-            <div class="review-avatar">
-              <img src="https://framerusercontent.com/images/lbAADFHGqYe1Ni9cA0AKDzkDtUs.png" alt="Maggie">
-            </div>
             <p class="review-name">Maggie</p>
             <p class="review-trip">名古屋・市區包車</p>
           </div>
@@ -391,9 +400,6 @@
           <div class="review-item">
             <div class="review-card">
               <p class="review-quote">司機超專業，全程協助長輩上下車，還會講中文，超級貼心！</p>
-            </div>
-            <div class="review-avatar">
-              <img src="https://framerusercontent.com/images/wsA87NhaIza0iEASwqXvovHPr6Q.png" alt="王小姐">
             </div>
             <p class="review-name">王小姐</p>
             <p class="review-trip">東京・市區包車</p>
@@ -409,11 +415,11 @@
     <div class="service-faq-inner">
 
       <div class="sec-head">
-        <img src="https://framerusercontent.com/images/fh8XBoGP2jLENDVnKlLRF1OPmw.png" alt="" class="sec-mascot">
+        <img src="images/logo-icon.png" alt="" class="sec-head-left-icon">
         <div class="sec-head-text">
-          <p class="sec-kado">KADO TOKYO</p>
           <h2 class="sec-h2">常見問題</h2>
         </div>
+        <img src="images/Vector拷貝.png" alt="" class="sec-head-right-icon">
       </div>
 
       <ul class="service-faq-list" role="list">

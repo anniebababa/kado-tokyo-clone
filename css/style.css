@@ -261,17 +261,17 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: var(--fs-14);
+  font-size: 22px;
   font-weight: 500;
   color: var(--c-text);
   transition: color var(--t-fast) var(--ease);
   white-space: nowrap;
 }
-.nav-back svg { width: 14px; height: 14px; flex-shrink: 0; }
+.nav-back svg { width: 18px; height: 18px; flex-shrink: 0; }
 .nav-back:hover { color: var(--c-primary); }
 .nav-sep {
   color: #ccc;
-  font-size: var(--fs-14);
+  font-size: 22px;
   line-height: 1;
   user-select: none;
 }
@@ -331,7 +331,7 @@ a { text-decoration: none; color: inherit; }
 .nav-dropdown-item {
   display: block;
   padding: 14px 20px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--c-text);
   border-bottom: 1px solid var(--c-border);
@@ -491,9 +491,9 @@ a { text-decoration: none; color: inherit; }
 .sec-head-text { display: flex; flex-direction: column; gap: 2px; }
 .sec-mascot { width: 52px; height: auto; flex-shrink: 0; }
 .sec-h2 {
-  font-family: var(--font-display);
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
   font-size: var(--fs-38);
-  font-weight: 700;
+  font-weight: 900;
   color: var(--c-text);
   line-height: 1.2;
   display: flex;
