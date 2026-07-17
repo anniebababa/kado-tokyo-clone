@@ -55,7 +55,7 @@
   /* Layout */
   --max-w:      1200px;
   --pad-x:      60px;
-  --header-h:   100px;
+  --header-h:   130px;
 
   /* Radius */
   --r-4:    4px;
@@ -171,7 +171,7 @@ a { text-decoration: none; color: inherit; }
 .kado-cta__label {
   position: relative;
   z-index: 1;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400; /* 細一點 */
   line-height: 1;
   color: var(--cta-color);
@@ -277,7 +277,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-left {
-  font-size: var(--fs-15);
+  font-size: 22px;
   font-weight: 500;
   color: var(--c-text);
   justify-self: start;
@@ -331,7 +331,7 @@ a { text-decoration: none; color: inherit; }
 .nav-dropdown-item {
   display: block;
   padding: 14px 20px;
-  font-size: var(--fs-14);
+  font-size: 24px;
   font-weight: 500;
   color: var(--c-text);
   border-bottom: 1px solid var(--c-border);
@@ -345,7 +345,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
 }
-.nav-logo img { height: 68px; width: auto; }
+.nav-logo img { height: 82px; width: auto; }
 .nav-right { justify-self: end; }
 
 /* Hamburger */
@@ -412,33 +412,34 @@ a { text-decoration: none; color: inherit; }
   background: var(--c-bg);
   padding-top: var(--header-h);
   overflow: hidden;
-  position: relative;
 }
 
-/* Full-width photo with curved bottom-right cutout */
-.hero-bg {
+/* 圖片與文字同一容器，文字疊在圖片右下角弧形白色區域 */
+.hero-inner {
   position: relative;
-  width: 100%;
-  height: 78vh;
-  min-height: 520px;
-  overflow: hidden;
-  border-bottom-right-radius: 42% 30%;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 40%;
+
+.hero-img-wrap {
+  width: 90%;
+  margin: 0;
+  padding: 0;
   display: block;
 }
 
-/* Text block — anchored in the beige area (bottom-right outside the photo curve) */
+.hero-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-caption {
   position: absolute;
-  bottom: 60px;
-  right: 60px;
-  z-index: 2;
-  max-width: 34%;
+  bottom: 8%;
+  right: calc(3% - 60px);
+  width: 32%;
 }
 .hero-text {
   text-align: left;
@@ -448,19 +449,24 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-title {
   font-family: "Noto Serif TC", "Source Han Serif TC", serif;
-  font-size: clamp(30px, 3.2vw, 48px);
+  font-size: clamp(20px, 3.52vw, 44px);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: #D34C4B;
   margin: 0 0 var(--s-12);
+  white-space: nowrap;
+}
+.hero-title span {
+  white-space: nowrap;
 }
 .hero-brand {
   font-family: var(--font-display);
-  font-size: var(--fs-15);
+  font-size: clamp(11px, 1.21vw, 18px);
   font-weight: 700;
   letter-spacing: 0.30em;
   color: var(--c-text);
+  white-space: nowrap;
 }
 
 /* ============================================================
@@ -518,18 +524,18 @@ a { text-decoration: none; color: inherit; }
    ABOUT
    ============================================================ */
 .about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  overflow: hidden;
-  min-height: 580px;
   background: var(--c-white);
 }
 .about-text {
-  padding: 100px 64px 100px 80px;
+  padding: 100px 0 100px 80px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+}
+.about-content {
+  flex: 1;
+  min-width: 0;
 }
 .about-text h2 {
   font-family: var(--font-display);
@@ -563,12 +569,12 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 .about-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  flex: 0 0 39%;
+  max-width: 39%;
+  height: auto;
   display: block;
-  border-radius: 0 0 0 120px;
+  align-self: flex-start;
+  margin-top: -100px;
 }
 
 /* ============================================================
@@ -576,7 +582,7 @@ a { text-decoration: none; color: inherit; }
    ============================================================ */
 .services {
   background: var(--c-white);
-  padding: var(--s-80) 0 var(--s-96);
+  padding: var(--s-32) 0 var(--s-96);
 }
 .services-inner {
   max-width: var(--max-w);
@@ -587,7 +593,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   gap: var(--s-64);
-  margin-bottom: var(--s-80);
+  margin-bottom: 16px;
 }
 .svc-row:last-child { margin-bottom: 0; }
 .svc-row--reverse { flex-direction: row-reverse; }
@@ -868,8 +874,8 @@ a { text-decoration: none; color: inherit; }
 }
 .review-name--accent { color: #CD4342; }
 .review-trip {
-  font-size: var(--fs-13);
-  color: #888;
+  font-size: 20px;
+  color: #000;
   margin-top: 2px;
 }
 
@@ -951,6 +957,7 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   background: url('../images/Rectangle (2).png') center center / cover no-repeat;
   background-color: #fff;
+  margin-top: -80px;
 }
 .cta::before {
   content: '';
@@ -1111,7 +1118,7 @@ a { text-decoration: none; color: inherit; }
     --fs-48: 40px;
     --fs-38: 32px;
   }
-  .hero-bg { height: 50vh; border-bottom-right-radius: 40% 28%; }
+  .hero-caption { width: 36%; bottom: 6%; right: 2%; }
 }
 
 /* ============================================================
@@ -1146,9 +1153,8 @@ a { text-decoration: none; color: inherit; }
   .mobile-nav { display: flex; }
 
   /* Hero */
-  .hero-bg { height: 58vw; min-height: 300px; border-bottom-right-radius: 38% 28%; }
-  .hero-caption { bottom: 24px; right: var(--pad-x); max-width: 40%; }
-  .hero-title { font-size: clamp(22px, 5.5vw, 34px); }
+  .hero-caption { width: 42%; bottom: 5%; right: 2%; }
+  .hero-title { font-size: 4.5vw; }
 
   /* About */
   .about { grid-template-columns: 1fr; min-height: auto; }
@@ -1207,8 +1213,8 @@ a { text-decoration: none; color: inherit; }
     --pad-x: 20px;
     --s-96: 56px;
   }
-  .hero-bg { height: 60vw; }
-  .hero-title { font-size: clamp(20px, 6vw, 28px); }
+  .hero-caption { width: 50%; bottom: 4%; right: 1%; }
+  .hero-title { font-size: 5.5vw; }
   .fleet-img { height: 180px; padding: 16px 24px; }
   .fleet-car-name { font-size: 22px; }
   .fleet-intro-text { font-size: 16px; }
