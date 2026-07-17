@@ -16,7 +16,6 @@
 .problem-head h3,
 .service-benefit-body h3,
 .service-plan-body h3,
-.service-audience-body h3,
 .service-booking-step-body h3,
 .service-cta-heading h2 {
   font-family: "Noto Serif TC", "Source Han Serif TC", serif;
@@ -291,6 +290,28 @@
   object-fit: fill;
   margin-right: 16px;
 }
+/* 包車預約流程: 虛線在右 */
+.booking-sec-head {
+  justify-content: flex-start !important;
+}
+.booking-vector-line {
+  flex: 1;
+  min-width: 0;
+  height: 6px;
+  object-fit: fill;
+  margin-left: 16px;
+}
+/* 客戶回饋: 虛線在左 */
+.reviews-sec-head {
+  justify-content: flex-end !important;
+}
+.reviews-vector-line {
+  flex: 1;
+  min-width: 0;
+  height: 6px;
+  object-fit: fill;
+  margin-right: 16px;
+}
 
 /* Benefits list */
 .benefits-list {
@@ -325,16 +346,6 @@
   height: auto;
   display: block;
   flex-shrink: 0;
-}
-.benefit-dots {
-  display: flex;
-  gap: 5px;
-}
-.benefit-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #F5B0A6;
 }
 .benefit-content {
   padding-top: 8px;
@@ -419,7 +430,7 @@
    AUDIENCE ("我適合包車旅遊嗎？")
    ============================================================ */
 .service-audience {
-  background: var(--c-bg);
+  background: var(--c-white);
   padding: var(--s-80) 0 var(--s-96);
 }
 .service-audience-inner {
@@ -427,53 +438,82 @@
   margin: 0 auto;
   padding: 0 var(--pad-x);
 }
-.service-audience-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ── Three-card staggered layout ─────────────────────── */
+.aud-grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   gap: 24px;
-  margin-top: var(--s-48);
+  margin-top: -130px;
+  padding-top: 140px;
+  padding-bottom: 160px;
 }
-.service-audience-card {
-  background: var(--c-white);
-  border-radius: var(--r-24);
-  overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color var(--t-base) var(--ease), transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+.aud-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
 }
-.service-audience-card--featured {
-  border-color: var(--c-primary);
-  transform: scale(1.02);
+.aud-col--mid {
+  margin-bottom: 75px;
 }
-.service-audience-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 28px auto 0;
+.aud-img-wrap {
+  width: 270px;
+  height: 270px;
+  flex-shrink: 0;
 }
-.service-audience-img img {
+.aud-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
   display: block;
 }
-.service-audience-body {
-  padding: 20px 24px 28px;
+/* Side cards: image at top, card slides behind image */
+.aud-col--side .aud-img-wrap {
+  position: relative;
+  z-index: 1;
+}
+.aud-col--side .aud-card {
+  margin-top: -130px;
+  padding-top: 155px;
+  position: relative;
+  z-index: 0;
+}
+/* Middle card: text at top, image at bottom */
+.aud-col--mid .aud-card {
+  padding-top: 44px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 0;
+}
+.aud-col--mid .aud-img-wrap {
+  margin-top: -80px;
+  position: relative;
+  z-index: 1;
+}
+/* Card base */
+.aud-card {
+  width: 100%;
+  background: #F6D6D5;
+  border-radius: 40px;
   text-align: center;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 44px;
 }
-.service-audience-body h3 {
-  font-family: var(--font-display);
-  font-size: var(--fs-18);
-  font-weight: 700;
+.aud-card h3 {
+  font-family: "Noto Sans TC", "Source Han Sans TC", sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #8B1A4A;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+.aud-card p {
+  font-size: 19px;
+  line-height: 1.9;
   color: var(--c-text);
-  margin-bottom: var(--s-8);
-}
-.service-audience-card--featured .service-audience-body h3 { color: var(--c-primary); }
-.service-audience-body p {
-  font-size: var(--fs-14);
-  color: #666;
-  line-height: var(--lh-loose);
+  margin: 0;
 }
 
 /* ============================================================
@@ -482,6 +522,7 @@
 .service-booking {
   background: var(--c-white);
   padding: var(--s-80) 0 var(--s-96);
+  margin-top: -100px;
 }
 .service-booking-inner {
   max-width: 960px;
@@ -561,140 +602,111 @@
    FAQ ("常見問題")
    ============================================================ */
 .service-faq {
-  background: var(--c-bg);
+  background: #F6D6D5;
   padding: var(--s-80) 0 var(--s-96);
 }
 .service-faq-inner {
-  max-width: 800px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 var(--pad-x);
 }
-.service-faq-list {
-  margin-top: var(--s-48);
-  list-style: none;
+/* FAQ 新版：常展開式 */
+.faq-list {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 32px;
 }
-.service-faq-item {
-  border-bottom: 1px solid var(--c-border);
-}
-.service-faq-item:first-child { border-top: 1px solid var(--c-border); }
-.service-faq-btn {
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
+.faq-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 0;
-  text-align: left;
-  font-family: var(--font-body);
-  font-size: var(--fs-16);
-  font-weight: 600;
-  color: var(--c-text);
-  transition: color var(--t-fast) var(--ease);
+  flex-direction: column;
+  gap: 20px;
 }
-.service-faq-btn:hover { color: var(--c-primary); }
-.service-faq-btn[aria-expanded="true"] { color: var(--c-primary); }
-.service-faq-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--c-primary);
-  color: var(--c-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.faq-q {
+  background: #ffffff;
+  border-radius: 40px;
+  padding: 16px 40px;
+}
+.faq-q span {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FF8C5A;
+  line-height: 1.5;
+}
+.faq-a {
+  padding-left: 48px;
+  padding-right: 24px;
+}
+.faq-a p {
   font-size: 18px;
-  font-weight: 300;
-  line-height: 1;
-  transition: transform var(--t-base) var(--ease);
+  color: #333;
+  line-height: 1.85;
+  margin: 0 0 6px;
 }
-.service-faq-btn[aria-expanded="true"] .service-faq-icon { transform: rotate(45deg); }
-.service-faq-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--t-slow) var(--ease), padding var(--t-base) var(--ease);
-  padding-bottom: 0;
-}
-.service-faq-body.open {
-  max-height: 600px;
-  padding-bottom: 24px;
-}
-.service-faq-body p, .service-faq-body ul {
-  font-size: var(--fs-15);
-  color: #555;
-  line-height: var(--lh-loose);
-  margin-bottom: var(--s-12);
-}
-.service-faq-body p:last-child, .service-faq-body ul:last-child { margin-bottom: 0; }
-.service-faq-body ul { padding-left: var(--s-16); }
-.service-faq-body li { margin-bottom: var(--s-8); }
+.faq-a p:last-child { margin-bottom: 0; }
 
 /* ============================================================
    SERVICE CTA (differs from homepage CTA)
    ============================================================ */
 .service-cta {
-  position: relative;
+  background: #ffffff;
+  padding: 80px 0;
   width: 100%;
-  min-height: 600px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: url('../images/Vector拷貝2.png') center center / cover no-repeat;
-  background-color: #fff;
 }
-.service-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(254,245,234,0.30);
-  z-index: 1;
-  pointer-events: none;
-}
-.service-cta-wave-top {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 2;
-  line-height: 0;
-  pointer-events: none;
-}
-.service-cta-wave-top svg { display: block; width: 100%; height: 80px; }
 .service-cta-inner {
-  position: relative;
-  z-index: 3;
-  max-width: var(--max-w);
-  width: 100%;
-  margin: 0 auto;
-  padding: 80px var(--pad-x) 80px;
   display: grid;
-  grid-template-columns: 54% 46%;
-  gap: 0;
+  grid-template-columns: 440px 1fr;
+  column-gap: 60px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.service-cta-image-wrap {
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.service-cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.service-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 .service-cta-heading h2 {
+  margin: 0;
+  color: #D94B48;
   font-family: "Noto Serif TC", "Source Han Serif TC", serif;
-  font-size: 56px;
-  font-weight: 500;
-  line-height: 1.55;
-  color: var(--c-primary);
+  font-size: 41px;
+  font-weight: 700;
+  line-height: 1.28;
   letter-spacing: 0;
+  text-align: left;
 }
 .service-cta-body {
-  padding-left: 60px;
+  margin-top: 22px;
+  width: 100%;
+  padding-left: 0;
 }
 .service-cta-body p {
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: var(--fs-18);
+  max-width: 620px;
+  margin: 0;
+  color: #111111;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.7;
-  color: #111;
-  max-width: 440px;
-  margin-bottom: var(--s-32);
+  line-height: 1.52;
+  text-align: left;
+  letter-spacing: 0;
 }
 
 /* ============================================================
@@ -702,52 +714,50 @@
    右側尖角，hover 透明外框 + 左側填色箭頭
    ============================================================ */
 .btn-service-cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 2.5px;
-  background: var(--c-primary);
-  /* 右側尖角，左側平直 */
-  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
+  display: inline-block;
+  margin-top: 28px;
   text-decoration: none;
+  padding: 2.5px;
+  background: #FF8C5A;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
   cursor: pointer;
 }
 .btn-service-cta-inner {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
-  min-height: 50px;
-  padding: 0 48px 0 24px;
-  background: var(--c-primary);
-  color: var(--c-white);
+  min-width: 380px;
+  height: 48px;
+  padding-left: 42px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.95);
+  color: #FF8C5A;
   font-family: var(--font-body);
-  font-size: var(--fs-16);
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1;
+  white-space: nowrap;
   clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 50%, calc(100% - 19px) 100%, 0 100%);
   transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
-  white-space: nowrap;
-  text-align: left;
 }
-/* CSS 三角形箭頭（hover 時顯示） */
 .btn-service-cta-arrow {
   width: 0;
   height: 0;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
-  border-left: 13px solid var(--c-primary);
+  border-left: 13px solid #FF8C5A;
   flex-shrink: 0;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+  opacity: 1;
+  transition: border-left-color var(--t-fast) var(--ease);
 }
-/* Hover: inner 透明，露出外層橙色作為 2.5px 外框 */
 .btn-service-cta:hover .btn-service-cta-inner {
-  background: rgba(255,255,255,0.92);
-  color: var(--c-primary);
+  background: #FF8C5A;
+  color: var(--c-white);
 }
 .btn-service-cta:hover .btn-service-cta-arrow {
-  opacity: 1;
-  transform: translateX(0);
+  border-left-color: var(--c-white);
 }
 
 /* ============================================================
@@ -790,9 +800,9 @@
   .service-plan-card:hover { transform: none; }
 
   /* Audience: 單欄堆疊 */
-  .service-audience-grid { grid-template-columns: 1fr; }
-  .service-audience-card--featured { transform: none; }
-  .service-audience-card:last-child { grid-column: auto; max-width: none; margin: 0; }
+  .aud-grid { flex-direction: column; align-items: center; padding-top: 140px; padding-bottom: 40px; gap: 32px; }
+  .aud-col, .aud-card { width: 100%; max-width: 360px; }
+  .aud-col--mid { margin-bottom: 0; }
 
   .service-booking-step {
     grid-template-columns: 48px 1fr 96px;
@@ -816,13 +826,20 @@
   .service-booking,
   .service-faq { padding-top: 72px; padding-bottom: 80px; }
 
+  /* CTA: 單欄 */
   .service-cta-inner {
     grid-template-columns: 1fr;
-    padding: 80px var(--pad-x) 60px;
+    padding: 0 24px;
+    row-gap: 32px;
   }
-  .service-cta-heading h2 { font-size: 38px; }
-  .service-cta-body { padding-left: 0; margin-top: 24px; }
-  .service-cta-body p { font-size: var(--fs-16); max-width: 100%; }
+  .service-cta-image-wrap {
+    width: min(78vw, 380px);
+    height: min(78vw, 380px);
+    margin: 0 auto;
+  }
+  .service-cta-heading h2 { font-size: 40px; }
+  .service-cta-body p { font-size: 18px; max-width: 100%; }
+  .btn-service-cta-inner { min-width: 0; width: 100%; }
 }
 
 @media (max-width: 430px) {
