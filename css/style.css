@@ -81,7 +81,8 @@
    RESET & BASE
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   font-size: 20px;
@@ -955,7 +956,7 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   height: 860px;
   overflow: hidden;
-  background: url('../images/Rectangle (2).png') center center / cover no-repeat;
+  background: url('../images/bg-footer.png') center center / cover no-repeat;
   background-color: #fff;
   margin-top: -80px;
 }
@@ -1158,26 +1159,77 @@ a { text-decoration: none; color: inherit; }
   .hamburger { display: flex; }
   .mobile-nav { display: flex; }
 
-  /* Hero */
-  .hero-caption { width: 42%; bottom: 5%; right: 2%; }
-  .hero-title { font-size: 4.5vw; }
+  /* Hero: 圖片全寬，caption 移到圖片下方獨立區塊 */
+  .hero-inner { display: flex; flex-direction: column; position: static; }
+  .hero-img-wrap { width: 100%; }
+  .hero-caption {
+    position: static;
+    width: 100%;
+    padding: 28px var(--pad-x) 36px;
+    background: var(--c-bg);
+    text-align: left;
+  }
+  .hero-title {
+    font-size: clamp(22px, 5.6vw, 28px);
+    white-space: normal;
+    line-height: 1.35;
+    margin-bottom: var(--s-12);
+    color: #D34C4B;
+  }
+  .hero-brand { font-size: 12px; letter-spacing: 0.2em; margin-top: 4px; }
 
-  /* About */
-  .about { grid-template-columns: 1fr; min-height: auto; }
-  .about-text { padding: 56px 32px; }
-  .about-deco { min-height: 280px; }
-  .about-img { border-radius: 0; height: 280px; }
+  /* About: 垂直排列，圖片移到文字下方 */
+  .about-text { flex-direction: column; padding: 40px var(--pad-x) 0; gap: var(--s-24); }
+  .about-img { flex: none; max-width: 100%; width: 100%; margin-top: 0; height: auto; border-radius: 0; align-self: stretch; }
+  .about-content { width: 100%; }
+  .about-h2-wrap { flex-wrap: wrap; }
+  .about-text h2 { font-size: 22px; }
+  .about-text p { font-size: 16px; }
 
-  /* Services: stack vertically */
-  .svc-row { flex-direction: column; gap: var(--s-32); }
+  /* Services: 垂直堆疊 */
+  .svc-row { flex-direction: column; gap: var(--s-24); align-items: center; }
   .svc-row--2 { flex-direction: column; }
+  .svc-row--3 { flex-direction: column; }
   .svc-spacer { display: none; }
-  .svc-circle-wrap { flex: 0 0 280px; height: 280px; }
-  .svc-circle-img, .svc-circle-img--right { width: 250px; height: 250px; }
-  .svc-blob { width: 220px; height: 220px; }
+
+  /* 縮小圓形區塊 */
+  .svc-circle-wrap,
+  .svc-row--3 .svc-circle-wrap {
+    flex: 0 0 260px;
+    height: 260px;
+    overflow: visible;
+    position: relative;
+  }
+  /* blob: 小圓，左上偏移 */
+  .svc-blob,
+  .svc-row--3 .svc-blob {
+    position: absolute;
+    width: 200px; height: 200px;
+    top: -10px; left: -10px;
+    z-index: 0;
+  }
+  /* 統一所有 svc-circle-img，強制正確位置與層級 */
+  .svc-circle-img,
+  .svc-circle-img--right,
+  .svc-row--3 .svc-circle-img {
+    position: absolute;
+    width: 230px; height: 230px;
+    top: 15px; left: 15px;
+    right: auto;
+    z-index: 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .svc-row--3 .svc-blob--right,
+  .svc-row--3 .svc-blob--tr { left: -10px; right: auto; }
+
+  .svc-text { text-align: center; }
+  .svc-text h3 { white-space: normal; font-size: 20px; }
+  .svc-text p { font-size: 16px; }
+  .svc-row--2 .svc-text { min-width: 0; flex: 1; }
 
   /* Fleet */
-  .fleet-inner { padding: 60px 20px; }
+  .fleet-inner { padding: 60px var(--pad-x); }
   .fleet-grid { grid-template-columns: 1fr; gap: 40px; }
   .fleet-title { font-size: 44px; }
   .fleet-intro-text { font-size: 20px; padding: 0 20px; }
@@ -1189,20 +1241,35 @@ a { text-decoration: none; color: inherit; }
 
   /* Reviews */
   .reviews-row { flex-direction: column; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 80px; }
   .reviews-more { width: 100%; display: flex; justify-content: center; }
+  .review-item { width: 100%; }
+  .review-card {
+    aspect-ratio: auto;
+    min-height: 140px;
+    padding: 24px 20px 76px;
+    background: #FDF4EA;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    position: relative;
+    overflow: visible;
+  }
+  .review-avatar { width: 90px; height: 90px; bottom: -38px; right: 16px; }
+  .review-quote { font-size: 15px; line-height: 1.7; color: #444; }
+  .review-name { font-size: 20px; margin-top: 48px; }
+  .review-trip { font-size: 14px; }
 
   /* Blog */
   .blog-grid { grid-template-columns: 1fr; }
 
   /* CTA */
-  .cta { height: auto; min-height: 520px; display: flex; flex-direction: column; align-items: flex-start; padding: 110px var(--pad-x) 60px; }
+  .cta { height: auto; min-height: 480px; display: flex; flex-direction: column; align-items: flex-start; padding: 100px var(--pad-x) 60px; }
   .cta-title { position: relative; left: auto; top: auto; width: 100%; }
-  .cta-body { position: relative; left: auto; top: auto; width: 100%; margin-top: 24px; }
-  .cta-wave-top svg { height: 120px; }
-  .cta-h2-line1 { font-size: 26px; }
-  .cta-h2-line2 { font-size: 36px; }
-  .cta-body p { font-size: 18px; line-height: 1.7; }
+  .cta-body { position: relative; left: auto; top: auto; width: 100%; margin-top: 20px; }
+  .cta-wave-top svg { height: 100px; }
+  .cta-h2-line1 { font-size: 22px; padding-left: 0; white-space: normal; }
+  .cta-h2-line2 { font-size: 28px; white-space: normal; }
+  .cta-body p { font-size: 16px; line-height: 1.7; }
 
   /* Footer */
   .footer { min-height: auto; }
@@ -1231,7 +1298,7 @@ a { text-decoration: none; color: inherit; }
   .sec-title { font-size: var(--fs-28); }
 
   /* CTA mobile */
-  .cta-h2-line1 { font-size: 22px; }
+  .cta-h2-line1 { font-size: 22px; padding-left: 0; }
   .cta-h2-line2 { font-size: 30px; }
   .cta-body p { font-size: 18px; line-height: 1.7; }
 
@@ -1249,4 +1316,43 @@ a { text-decoration: none; color: inherit; }
   :root { --pad-x: 16px; }
   .hero-text h1 { font-size: 28px; }
   .sec-title { font-size: 24px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px (小手機補充)
+   ============================================================ */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-title { font-size: 20px; line-height: 1.4; }
+  .hero-brand { font-size: 11px; letter-spacing: 0.2em; }
+
+  /* About */
+  .about-h2-wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .about-h2-icon { width: 50px; }
+  .about-text h2 { font-size: 22px; }
+  .about-text p { font-size: 16px; }
+
+  /* Services */
+  .services-inner { padding: 0 var(--pad-x); }
+  .svc-text p { font-size: 17px; }
+
+  /* Fleet */
+  .fleet-inner { padding: 48px var(--pad-x); }
+  .fleet-intro-text { font-size: 17px; padding: 0; }
+  .fleet-desc-box { height: auto; padding: 18px 24px; }
+  .fleet-desc-box p { font-size: 16px; }
+
+  /* Reviews: remove fixed aspect-ratio so card height is content-based */
+  .review-card { aspect-ratio: auto; min-height: 180px; }
+  .reviews-grid { gap: var(--s-48); }
+
+  /* Blog */
+  .blog-more .kado-cta { width: 100%; }
+
+  /* CTA */
+  .cta-title { left: var(--pad-x); right: var(--pad-x); }
+  .cta-body { left: var(--pad-x); right: var(--pad-x); width: auto; }
+
+  /* Footer */
+  .footer-legal br { display: none; }
 }
